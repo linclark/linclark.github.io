@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xml:base="http://lin-clark.com" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Lin Clark</title>
+    <link href="http://lin-clark.com"/>
+    <language>en</language>
+    <updated>2013-07-07T00:00:00Z</updated>
+    <author>
+      <name>Lin Clark</name>
+    </author>
+    <item>
+      <title>Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</title>
+      <link>http://lin-clark.com/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/</link>
+      <description>&lt;p&gt;You may have seen the announcement last week that Dries &lt;a href="https://drupal.org/node/1784234#comment-7612081"&gt;approved&lt;/a&gt; and &lt;a href="https://drupal.org/commitlog/commit/2/36975492e9222753eba723cd5e07da1de1bb9ab1"&gt;committed&lt;/a&gt; a patch which changes Drupal core's default RDF mappings. When any new Drupal 8 site is installed, the markup will include RDFa that uses terms from the &lt;a href="http://schema.org/"&gt;Schema.org&lt;/a&gt; vocabulary. Of course, as with anything Schema.org, this announcement got some attention.&lt;/p&gt;
+&lt;p&gt;Unfortunately, what's been getting less attention are the multiple other issues that still need to be fixed if we're really going to support RDFa (or microdata, or microformats, for that matter) in Drupal 8 and support it well.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 07 Jul 2013 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+  </channel>
+</rss>

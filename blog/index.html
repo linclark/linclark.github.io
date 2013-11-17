@@ -1,0 +1,152 @@
+<!doctype html>
+<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lin Clark</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-custom.js"></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <header role="banner">
+      <!--<nav role="navigation">
+        <ul>
+          <li><a href="/writing">Writing</a></li>
+          <li><a href="/speaking">Speaking</a></li>
+          <li><a href="">Non-code</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </nav>-->
+      <div id="linclark-image">
+        <div></div>
+      </div>
+      <div>
+        <h1>Hi, I'm <a href="/">Lin Clark</a></h1>
+      </div>
+      <div>
+        <p>I like to code and talk about code</p>
+      </div>
+    </header>
+
+    <div id="main" class="clear">
+      <div id="main-content" role="main">
+        <h2><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> </h2><span>Jul  7</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>You may have seen the announcement last week that Dries <a href="https://drupal.org/node/1784234#comment-7612081">approved</a> and <a href="https://drupal.org/commitlog/commit/2/36975492e9222753eba723cd5e07da1de1bb9ab1">committed</a> a patch which changes Drupal core's default RDF mappings. When any new Drupal 8 site is installed, the markup will include RDFa that uses terms from the <a href="http://schema.org/">Schema.org</a> vocabulary. Of course, as with anything Schema.org, this announcement got some attention.</p>
+<p>Unfortunately, what's been getting less attention are the multiple other issues that still need to be fixed if we're really going to support RDFa (or microdata, or microformats, for that matter) in Drupal 8 and support it well.</p>
+<a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">more &raquo;</a><h2><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> </h2><span>May 24</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+Recent developments in microdata publishing support in Views/Panels and Google Summer of Code's support for microdata publishing in contrib field formatters are helping push the Microdata module closer to release.
+<a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">more &raquo;</a><h2><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> </h2><span>Apr  3</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>By my rough count, there are 150 contrib projects for Drupal 7 that declare new field types as part of their central module. I've listed the projects here by their usage statistics.</p>
+<p>Please let me know if I missed your field module!</p>
+<a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">more &raquo;</a><h2><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> </h2><span>Mar 15</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>The essence of Drupal is complex interactions between modules. These interactions currently take the form of hooks. The most difficult (and most useful) thing for a Drupal developer to understand is how different sets of modules interact using these hooks and in which order.</p><p>Even though they are the heart of our system, we don&#39;t have a good way of documenting these interactions. While the API docs do contain this information for some hooks (eg, <a href="http://api.drupal.org/api/drupal/modules%21node%21node.api.php/function/hook_node_load/7">hook_node_load</a>), it&#39;s hard to grasp the overall picture from reading docblocks.</p><p>This causes a bigger problem than just the learning curve. It also makes it harder for us to discuss changes in APIs and architecture. We have been seeing this in the Drupal 8 development cycle&mdash;we are considering major overhauls of systems, and it&#39;s unclear to many what the impacts of these decisions are. The only people who can intelligently participate are those who are intensely involved in the architecting process or those who take a considerable amount of time to step through the code. As sun points out in <a href="http://www.unleashedmind.com/en/blog/sun/drupal-8-the-path-forward">Drupal 8: The Path Forward</a>, this communication challenge remains unresolved.</p><p>We need to find a way to communicate about these interactions which are so central to what we do.&nbsp;I have recently starting working with a visualization technique that helps me understand these interactions better, and I would be interested to hear whether others find it helpful as well.</p>
+<a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">more &raquo;</a><h2><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> </h2><span>Sep 14</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The <a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html">announcement</a> has gotten people really interested in inline structured data such as microdata and RDFa.</p>
+<p>This screencast shows how you can use the microdata module to place Schema.org terms. This is an early preview—very few field formatters have microdata support at this time and the module is still changing quite a bit—but I thought people might be interested in the direction the module is heading.</p>
+<a href="/blog/2011/09/14/microdata-drupal-early-preview/">more &raquo;</a><h2><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> </h2><span>Sep 14</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>I posted this video a couple of weeks ago but didn't get a chance to write it up. It demonstrates building a module that creates a view using SPARQL on whatever site it is installed on.</p>
+<p>If you provide a dataset and it is available with SPARQL, this can be a really great way to help people understand how to use your data. Because users who install the module can use the Views user interface to alter the view that is created, it can be a great starting point for experimentation by users who don't know so much about your data or building views.</p>
+<a href="/blog/2011/09/14/building-modules-top-sparql-views/">more &raquo;</a><h2><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> </h2><span>Aug 18</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>Recently, there has been quite a row about a tweet sent out by the DrupalCon Twitter account. The tweet suggested that people look at the attendees page to reconnect with the attractive developer/designer they met at last year's DrupalCon. A number of people pointed out that this subtly (though inadvertently) promotes a sexually charged environment at the conference.</p><p>For the most part I have stayed out of the discussion, but in catching up on some blog posts last night I saw some troubling reactions, with people being quite callous to the experiences of those who found the tweet off-putting.</p>
+<p>I don't usually blog about these kinds of issues, but I wanted to share some of my experiences that I think can help inform the discussion and help people understand some of the sensitivities.</p>
+<p>Not all of these experiences are directly related to the tweet at hand, but I do believe the "Drupal isn't immune" section does directly relate and is a very concrete example of how women can sometimes be treated at these events.</p>
+<a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">more &raquo;</a><h2><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> </h2><span>Aug 16</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>Interest in microdata has been on the rise since the <a href="http://googlewebmastercentral.blogspot.com/2011/06/introducing-schemaorg-search-engines.html">schema.org announcement</a> in June.</p><p>I had fortunately already been looking at the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html">microdata spec</a> and thinking about how the work to get RDFa output in core could be repurposed for microdata, so I <a href="http://drupal.org/project/microdata">started a project</a> that day.</p>
+<p>Since microdata is based on RDFa, there is a lot that can be repurposed. But as I noted in <a href="http://lin-clark.com/blog/two-meanings-semantics-html5">my last post on the subject</a>, there are also small differences between the specs... and in some cases, these small differences have a big impact.</p>
+<p>We need to start thinking about those impacts.</p>
+<a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">more &raquo;</a><h2><a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">More fun with CIA data: SPARQL Views with relationships and contextual filters</a> </h2><span>Aug 11</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>Yesterday, I posted about <a href="http://lin-clark.com/blog/turning-cias-data-pretty-pictures-your-site-using-views">reusing the CIA's data</a> on your site. I demonstrated how you can use Views to access the CIA World Factbook data and turn it into charts.</p>
+<p>You can enhance these views further by using relationships to get information about related things, such as bordering countries, and you can use contextual filters to tailor the SPARQL results to your node content.</p>
+<a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">more &raquo;</a><h2><a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">Turning the CIA's data into pretty pictures on your site using Views</a> </h2><span>Aug 10</span>
+<!-- use article.summary(250) if you have Nokogiri available to show just
+     the first 250 characters -->
+<p>There are a lot of data providers who publish their data openly for reuse. Surprisingly, <a href="http://ckan.net/package/cia-world-factbook">the CIA is one</a> of them.</p>
+<p>Because of this, data geeks can take it and turn it into something that's easy for others to reuse, using open data formats. And because it's available in an open data format, platforms like <a href="http://beta.kasabi.com">Kasabi</a> can load it on to their big servers and provide ways for other sites to access and query it, like a SPARQL endpoint. And because it is provided in a SPARQL endpoint, it is easy to reuse it in your Drupal site using Views.</p>
+<a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">more &raquo;</a>
+      </div>
+    </div>
+    <footer>
+
+    </footer>
+  </div>
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via ant build script -->
+  <script src="/js/mylibs/helper.js"></script>
+  <script src="/js/script.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    MBP.scaleFix();
+  </script>
+
+  <!-- Debugger - remove for production -->
+  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+<div class="clear"></div>
+</body>
+</html>

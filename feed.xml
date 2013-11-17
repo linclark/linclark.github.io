@@ -18,5 +18,104 @@
       <guid>http://lin-clark.com/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
+    <item>
+      <title>Microdata updates: Preliminary Views/Panels support and Google Summer of Code</title>
+      <link>http://lin-clark.com/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/</link>
+      <description>Recent developments in microdata publishing support in Views/Panels and Google Summer of Code's support for microdata publishing in contrib field formatters are helping push the Microdata module closer to release.
+</description>
+      <pubDate>Thu, 24 May 2012 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Drupal 7 field modules by popularity</title>
+      <link>http://lin-clark.com/blog/2012/04/03/drupal-7-field-modules-popularity/</link>
+      <description>&lt;p&gt;By my rough count, there are 150 contrib projects for Drupal 7 that declare new field types as part of their central module. I've listed the projects here by their usage statistics.&lt;/p&gt;
+&lt;p&gt;Please let me know if I missed your field module!&lt;/p&gt;
+</description>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2012/04/03/drupal-7-field-modules-popularity/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Exploring Drupal module interactions with pidgin UML</title>
+      <link>http://lin-clark.com/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/</link>
+      <description>&lt;p&gt;The essence of Drupal is complex interactions between modules. These interactions currently take the form of hooks. The most difficult (and most useful) thing for a Drupal developer to understand is how different sets of modules interact using these hooks and in which order.&lt;/p&gt;&lt;p&gt;Even though they are the heart of our system, we don&amp;#39;t have a good way of documenting these interactions. While the API docs do contain this information for some hooks (eg, &lt;a href="http://api.drupal.org/api/drupal/modules%21node%21node.api.php/function/hook_node_load/7"&gt;hook_node_load&lt;/a&gt;), it&amp;#39;s hard to grasp the overall picture from reading docblocks.&lt;/p&gt;&lt;p&gt;This causes a bigger problem than just the learning curve. It also makes it harder for us to discuss changes in APIs and architecture. We have been seeing this in the Drupal 8 development cycle&amp;mdash;we are considering major overhauls of systems, and it&amp;#39;s unclear to many what the impacts of these decisions are. The only people who can intelligently participate are those who are intensely involved in the architecting process or those who take a considerable amount of time to step through the code. As sun points out in &lt;a href="http://www.unleashedmind.com/en/blog/sun/drupal-8-the-path-forward"&gt;Drupal 8: The Path Forward&lt;/a&gt;, this communication challenge remains unresolved.&lt;/p&gt;&lt;p&gt;We need to find a way to communicate about these interactions which are so central to what we do.&amp;nbsp;I have recently starting working with a visualization technique that helps me understand these interactions better, and I would be interested to hear whether others find it helpful as well.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 15 Mar 2012 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Microdata in Drupal early preview</title>
+      <link>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</link>
+      <description>&lt;p&gt;On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The &lt;a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html"&gt;announcement&lt;/a&gt; has gotten people really interested in inline structured data such as microdata and RDFa.&lt;/p&gt;
+&lt;p&gt;This screencast shows how you can use the microdata module to place Schema.org terms. This is an early preview—very few field formatters have microdata support at this time and the module is still changing quite a bit—but I thought people might be interested in the direction the module is heading.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Building modules on top of SPARQL Views</title>
+      <link>http://lin-clark.com/blog/2011/09/14/building-modules-top-sparql-views/</link>
+      <description>&lt;p&gt;I posted this video a couple of weeks ago but didn't get a chance to write it up. It demonstrates building a module that creates a view using SPARQL on whatever site it is installed on.&lt;/p&gt;
+&lt;p&gt;If you provide a dataset and it is available with SPARQL, this can be a really great way to help people understand how to use your data. Because users who install the module can use the Views user interface to alter the view that is created, it can be a great starting point for experimentation by users who don't know so much about your data or building views.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/09/14/building-modules-top-sparql-views/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>On being a woman in tech: some of my experiences</title>
+      <link>http://lin-clark.com/blog/2011/08/18/being-woman-tech-some-my-experiences/</link>
+      <description>&lt;p&gt;Recently, there has been quite a row about a tweet sent out by the DrupalCon Twitter account. The tweet suggested that people look at the attendees page to reconnect with the attractive developer/designer they met at last year's DrupalCon. A number of people pointed out that this subtly (though inadvertently) promotes a sexually charged environment at the conference.&lt;/p&gt;&lt;p&gt;For the most part I have stayed out of the discussion, but in catching up on some blog posts last night I saw some troubling reactions, with people being quite callous to the experiences of those who found the tweet off-putting.&lt;/p&gt;
+&lt;p&gt;I don't usually blog about these kinds of issues, but I wanted to share some of my experiences that I think can help inform the discussion and help people understand some of the sensitivities.&lt;/p&gt;
+&lt;p&gt;Not all of these experiences are directly related to the tweet at hand, but I do believe the "Drupal isn't immune" section does directly relate and is a very concrete example of how women can sometimes be treated at these events.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 18 Aug 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/08/18/being-woman-tech-some-my-experiences/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Microdata in Drupal: challenges for field formatters</title>
+      <link>http://lin-clark.com/blog/2011/08/16/microdata-drupal-challenges-field-formatters/</link>
+      <description>&lt;p&gt;Interest in microdata has been on the rise since the &lt;a href="http://googlewebmastercentral.blogspot.com/2011/06/introducing-schemaorg-search-engines.html"&gt;schema.org announcement&lt;/a&gt; in June.&lt;/p&gt;&lt;p&gt;I had fortunately already been looking at the &lt;a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html"&gt;microdata spec&lt;/a&gt; and thinking about how the work to get RDFa output in core could be repurposed for microdata, so I &lt;a href="http://drupal.org/project/microdata"&gt;started a project&lt;/a&gt; that day.&lt;/p&gt;
+&lt;p&gt;Since microdata is based on RDFa, there is a lot that can be repurposed. But as I noted in &lt;a href="http://lin-clark.com/blog/two-meanings-semantics-html5"&gt;my last post on the subject&lt;/a&gt;, there are also small differences between the specs... and in some cases, these small differences have a big impact.&lt;/p&gt;
+&lt;p&gt;We need to start thinking about those impacts.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 16 Aug 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/08/16/microdata-drupal-challenges-field-formatters/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>More fun with CIA data: SPARQL Views with relationships and contextual filters</title>
+      <link>http://lin-clark.com/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/</link>
+      <description>&lt;p&gt;Yesterday, I posted about &lt;a href="http://lin-clark.com/blog/turning-cias-data-pretty-pictures-your-site-using-views"&gt;reusing the CIA's data&lt;/a&gt; on your site. I demonstrated how you can use Views to access the CIA World Factbook data and turn it into charts.&lt;/p&gt;
+&lt;p&gt;You can enhance these views further by using relationships to get information about related things, such as bordering countries, and you can use contextual filters to tailor the SPARQL results to your node content.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 11 Aug 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Turning the CIA's data into pretty pictures on your site using Views</title>
+      <link>http://lin-clark.com/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/</link>
+      <description>&lt;p&gt;There are a lot of data providers who publish their data openly for reuse. Surprisingly, &lt;a href="http://ckan.net/package/cia-world-factbook"&gt;the CIA is one&lt;/a&gt; of them.&lt;/p&gt;
+&lt;p&gt;Because of this, data geeks can take it and turn it into something that's easy for others to reuse, using open data formats. And because it's available in an open data format, platforms like &lt;a href="http://beta.kasabi.com"&gt;Kasabi&lt;/a&gt; can load it on to their big servers and provide ways for other sites to access and query it, like a SPARQL endpoint. And because it is provided in a SPARQL endpoint, it is easy to reuse it in your Drupal site using Views.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 10 Aug 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Writing scripts to clone contrib projects from git.drupal.org</title>
+      <link>http://lin-clark.com/blog/2011/07/22/writing-scripts-clone-contrib-projects-gitdrupalorg/</link>
+      <description>&lt;p&gt;As part of my masters thesis, I&amp;rsquo;m looking into innovation diffusion within Drupal (I think y'all know which one ;).&lt;/p&gt;&lt;p&gt;In order to &amp;lsquo;grep&amp;rsquo; against the codebase, I needed a copy of the most recent versions of ALL of Drupal 7 contrib, which was easy to do back when we used CVS (even a little too easy when you realized that you accidentally started downloading 7,000 projects). However, this is &lt;a href="http://drupal.org/node/1057386"&gt;not so easy with git.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Before starting, I asked in #drupal-contribute whether pulling all of contrib for research purposes would be frowned upon, since it can really soak up a lot of server resources. Folks said it was ok and encouraged me to share whatever script I came up with... so here it is.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 22 Jul 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/07/22/writing-scripts-clone-contrib-projects-gitdrupalorg/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
   </channel>
 </rss>

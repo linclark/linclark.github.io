@@ -330,119 +330,166 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 1, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 3, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
 body {
-  font-size: 1.5em;
-  line-height: 1.8;
-  font-family: 'open_sansregular'; }
+  font-family: 'open_sansregular';
+  border: 10px solid #dddddd;
+  padding-bottom: 3em; }
 
-/* line 9, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 11, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
 h1,
 h2,
 h3,
 h4 {
   font-family: 'open_sanscondensed_light'; }
 
-/* line 13, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 14, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+a {
+  color: indianred;
+  text-decoration: none; }
+
+/* line 19, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
 header[role="banner"] {
-  background: url("../images/linclark-sweater.jpg") no-repeat #111111 right;
-  color: white;
   font-size: 100%; }
-  /* line 17, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
-  header[role="banner"] h1 {
-    font-size: 3em; }
-  /* line 20, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+  /* line 21, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
   header[role="banner"] h2 {
     font-family: 'open_sansregular';
     font-size: 1em; }
-  /* line 24, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
-  header[role="banner"] .foreground {
-    background: #111111; }
 
-/* line 29, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 27, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
 nav[role="navigation"] {
-  background: #111111;
-  color: white;
   font-family: 'open_sanscondensed_light'; }
 
-/* line 35, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 33, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+#container
 #main {
-  border-top: 1px solid #111111; }
+  border-top: 2px dotted #dddddd; }
 
-/* line 39, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 38, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+#aboutme ul {
+  font-size: .7em;
+  list-style: none;
+  padding: 0; }
+  /* line 43, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+  #aboutme ul li {
+    padding-bottom: 1em;
+    background: white;
+    margin-bottom: 1em;
+    padding: 0;
+    padding-left: 1em;
+    border-left: 1em #aaaaaa solid; }
+
+/* line 54, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+.more {
+  display: none;
+  font-size: .5em; }
+
+/* line 59, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
 ::-moz-selection {
   background: red;
   text-shadow: none; }
 
-/* line 43, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
+/* line 63, /Users/linclark/Sites/lin-clark/source/css/partials/_base.scss */
 ::selection {
-  background: red;
+  background: greenyellow;
   text-shadow: none; }
 
 /* line 11, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
-#container {
-  max-width: 73em;
-  _width: 73em;
-  padding-left: 1em;
-  padding-right: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%; }
-  /* line 38, /usr/local/Cellar/ruby/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-  #container:after {
-    content: "";
-    display: table;
-    clear: both; }
+body {
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding-left: 4.1958%;
+  padding-right: 4.1958%; }
+  @media (min-width: 30em) {
+    /* line 11, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+    body {
+      font-size: 1.4em;
+      line-height: 1.8; } }
 
-/* line 23, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
-header[role="banner"] h1, header[role="banner"] h2 {
-  margin: 0 0 0 0; }
-/* line 26, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
-header[role="banner"] .foreground {
-  font-size: 1em;
-  width: 49.29577%;
-  float: left;
-  margin-right: 1.40845%;
-  display: inline; }
-@media (min-width: 45em) {
-  /* line 22, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
-  header[role="banner"] {
-    padding-left: 3.52113%;
-    padding-right: 3.52113%; } }
+/* line 32, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+header[role="banner"] h1 {
+  font-size: 3em;
+  margin: .5em 0 0 0; }
+/* line 36, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+header[role="banner"] p {
+  margin: -0.5em 0 1em 0;
+  font-weight: bold; }
+@media (min-width: 37.5em) {
+  /* line 40, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+  header[role="banner"] #linclark-image {
+    background: url("../images/linclark_scarf_wide-sm.jpg") no-repeat white center center;
+    height: 5em;
+    margin-top: 1.2em;
+    width: 24.47552%;
+    float: right;
+    margin-right: 0; } }
+@media (min-width: 62.5em) {
+  /* line 40, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+  header[role="banner"] #linclark-image {
+    background: url("../images/linclark_scarf_wide-sm.jpg") no-repeat white center right;
+    width: 32.86713%;
+    float: right;
+    margin-right: 0; } }
 
-/* line 35, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+/* line 54, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
 nav[role="navigation"] {
+  display: none;
   width: 100%; }
-  /* line 37, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+  @media (min-width: 47.5em) {
+    /* line 54, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+    nav[role="navigation"] {
+      display: block;
+      margin-top: .8em;
+      width: 16.08392%;
+      float: right;
+      margin-right: 0;
+      padding-left: 4.1958%;
+      padding-right: 0%; } }
+  @media (min-width: 62.5em) {
+    /* line 54, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+    nav[role="navigation"] {
+      width: 7.69231%;
+      float: right;
+      margin-right: 0; } }
+  /* line 69, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
   nav[role="navigation"] ul {
     margin: 0;
     padding: 0; }
-  @media (min-width: 45em) {
-    /* line 41, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+  @media (min-width: 47.5em) {
+    /* line 73, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
     nav[role="navigation"] li {
-      background: #444444;
-      display: inline-block;
-      font-size: .8em;
-      text-align: center;
-      width: 22%; } }
+      font-size: .8em; } }
 
-/* line 52, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+/* line 80, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
 img {
   width: 99%; }
 
-/* line 56, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+/* line 84, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
 #main {
   margin-top: 5px; }
 
-@media (min-width: 45em) {
-  /* line 60, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+@media (min-width: 47.5em) {
+  /* line 106, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
   #main-content {
-    padding-left: 3.52113%;
-    padding-right: 3.52113%;
-    width: 66.19718%;
-    float: left;
-    margin-right: 1.40845%; } }
+    font-size: 1.3em; } }
 
-/* line 67, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+@media (min-width: 47.5em) {
+  /* line 113, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+  #aboutme .column:first-child {
+    float: left;
+    width: 49%; } }
+@media (min-width: 47.5em) {
+  /* line 119, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+  #aboutme .column:last-child {
+    float: right;
+    width: 49%; } }
+/* line 125, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
+#aboutme div div {
+  background: #dddddd;
+  padding-left: 4.1958%;
+  padding-right: 4.1958%;
+  padding-bottom: 1em; }
+
+/* line 132, /Users/linclark/Sites/lin-clark/source/css/partials/_layout.scss */
 .clear {
   clear: both; }
