@@ -1,0 +1,212 @@
+<!doctype html>
+<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lin Clark</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-custom.js"></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <header role="banner">
+      <div class="foreground">
+        <h1>Hi, I'm Lin Clark</h1>
+        <h2>I like to code and talk about code</h2>
+        <nav role="navigation">
+          <ul>
+            <li>About</li>
+            <li>Writing</li>
+            <li>Speaking</li>
+            <li>Non-code</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="clear"></div>
+    </header>
+
+    <div id="main">
+      <div id="main-content" role="main">
+        <article>
+  <h1>Databases: The Next Generation--Notes</h1>
+  <p>One of the DrupalCon presentations that I wanted to be sure to watch early on was <a href="http://sf2010.drupal.org/conference/sessions/databases-next-generation">Databases: The Next Generation</a>, presented by database maintainer and self described gadfly Larry Garfield.</p><p>There have been some big changes in the Database Abstraction layer in Drupal 7, which I've been using in patches to core and porting a contib module or two to D7. I've already  groked dynamic queries and why they are great from reading up on PDO,  but since most of my database experience has been using Drupal 6, I  still haven't quite figured out how transactions work even though  they've been around in databases for a long time ....and I have no idea  about how to make master/slave work.</p><p>Even though, as Garfield says, everything in this presentation is covered in the docs at http://drupal.org/node/310069, this presentation is a great and worthwhile intro to the D7 db abstraction layer.</p>
+<hr /><p>There are only 5 lines of code that didn't change, and it's now  completely object oriented under the hood. Can now do DB specific  optimization in the driver.</p><div>Type-handling is handled  automatically, which is cool. There is now a driver for Oracle and MS  SQL, which means real support for 5 databases (amazing!)</div><p>The  database abstraction now uses a fluent API like jQuery. Garfield said  that it should be familiar &quot;which is good&quot;. I don't know if they were  considering usability and how it is good to work with Web developer's  mental model of how things work, but I'm guessing yes.</p><p>[8:00]  The configuration (within Drupal) for a master/slave setup seems pretty  simple... though I am not a server geek, so I don't know what all else  goes into setting it up. Core specifies which kinds of queries can be  directed at the slave servers, contrib modules can do that, but sounds  like it could be complicated.&nbsp;</p><p>&nbsp;There is a flag in the  session that will disable slave server access if something has changed.  For instance, if you post a node, you won't access the slave for a  certain period of time to ensure that you see the node. The rest of the  world won't see the node until it has replicated to the slave server.  Core does this for node save and comment save.</p><div><div>[11:20] Now a  whole bunch of queries:</div><h2>Queries</h2><h3>Static  (select)&mdash;db_query</h3><div>Majority case, for queries that don't really  change. The only change is you now use a named placeholder instead of  '%s' or '%d', etc. No quotes because we're using prepared statements.  Basically makes a template and drops values in like function parameters.  Do it this way and SQL injection doesn't happen. (Sidenote: benchmarks  show this is about even with the old system).</div><br />[19:00] You can  pass in options to db_query, most likely the only two to use are  'target' (if you want to direct to the slave) and 'fetch' (to change the  fetch mode to associative array, numeric array, an array keyed by both,  or a instances of a certain class processed in C code before returned).  A query is slave safe if you don't care if the data in it is 2-3 mins  old. If there is no slave server, target is ignored.</div><p>Lots of  ways to fetch data now, which has simplified lots of places in core  where we were looping for no purpose. Now it is shoved all down into DB  layer.</p><div>[25:45] Because all of these methods return objects,  you can chain just the way you do in jQuery and achieve things in one  line of code. For instance, db_query(&quot;SELECT nid, title FROM  {node}&quot;)-&gt;featchAllKeyed(); (This received a round of applause)</div><p>fetchObject  and fetchAll are the only ones that happen in C code, but it is better  because code is consolidated.</p><h3>Dynamic queries&mdash;db_select</h3><p>Don't  want to use this unless you need it.</p><div>[28:00] This gives us  hook_query_alter. Builds queries as a data structure. You can add a tag  to your query and then it will get passed to hook_query_alter.</div><div>join()  and addField() can't be chained because they could return something  besides the object.</div><div>&nbsp;</div><div>You should always add the node access  tag if you are running against the node table for security reasons. Extenders  are available, for instance extend('PagerDefault').</div><h3>db_insert,  db_update</h3><p>[42:00] Allows multi-insert, which is faster than the old  way.</p><div>You can also insert from a query.</div><h3>db_merge</h3><p>[47:30]  Counter increment</p><h2>Transactions</h2><div>Several queries that  run together, if one fails they all fail. Drupal has a wrapper around  PDO's transactions (partially to hide that they don't work with MyISAM  tables).</div><p>All you do is create an transaction object, catch  an exception and rollback the transaction (with a message to the  watchdog).</p><h2>Docs</h2><div>drupal.org/node/310069</div><p>&nbsp;</p><p>&nbsp;</p>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lin-clark'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div>
+
+      <aside>
+        <h2>Recent Articles</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> <span>Jul  7</span></li>
+          
+            <li><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> <span>May 24</span></li>
+          
+            <li><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> <span>Apr  3</span></li>
+          
+            <li><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> <span>Mar 15</span></li>
+          
+            <li><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> <span>Aug 18</span></li>
+          
+            <li><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> <span>Aug 16</span></li>
+          
+            <li><a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">More fun with CIA data: SPARQL Views with relationships and contextual filters</a> <span>Aug 11</span></li>
+          
+            <li><a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">Turning the CIA's data into pretty pictures on your site using Views</a> <span>Aug 10</span></li>
+          
+        </ol>
+
+        <h2>Tags</h2>
+        <ol>
+          
+            <li><a href="/blog/tags/rdf/">rdf</a> (12)</a></li>
+          
+            <li><a href="/blog/tags/drupal/">drupal</a> (24)</a></li>
+          
+            <li><a href="/blog/tags/drupal-planet/">drupal-planet</a> (52)</a></li>
+          
+            <li><a href="/blog/tags/screencast/">screencast</a> (8)</a></li>
+          
+            <li><a href="/blog/tags/drush/">drush</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/views/">views</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/theming/">theming</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/css/">css</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/dcsf-home/">dcsf@home</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/api/">api</a> (3)</a></li>
+          
+            <li><a href="/blog/tags/jquery/">jQuery</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/database/">database</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/module-development/">module development</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/sparql/">sparql</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/sioc/">sioc</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/drupal-dev-notes/">Drupal Dev Notes</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/rdfa/">rdfa</a> (4)</a></li>
+          
+            <li><a href="/blog/tags/html-data/">html-data</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/microdata/">microdata</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/html5/">html5</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/git/">git</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/modules/">modules</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/data/">data</a> (2)</a></li>
+          
+        </ol>
+
+        <h2>By Year</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/">2013</a> (1)</a></li>
+          
+            <li><a href="/blog/2012/">2012</a> (3)</a></li>
+          
+            <li><a href="/blog/2011/">2011</a> (12)</a></li>
+          
+            <li><a href="/blog/2010/">2010</a> (17)</a></li>
+          
+            <li><a href="/blog/2009/">2009</a> (4)</a></li>
+          
+        </ol>
+      </aside>
+      </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via ant build script -->
+  <script src="js/mylibs/helper.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    MBP.scaleFix();
+  </script>
+
+  <!-- Debugger - remove for production -->
+  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>

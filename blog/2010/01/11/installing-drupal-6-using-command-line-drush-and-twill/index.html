@@ -1,0 +1,248 @@
+<!doctype html>
+<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lin Clark</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-custom.js"></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <header role="banner">
+      <div class="foreground">
+        <h1>Hi, I'm Lin Clark</h1>
+        <h2>I like to code and talk about code</h2>
+        <nav role="navigation">
+          <ul>
+            <li>About</li>
+            <li>Writing</li>
+            <li>Speaking</li>
+            <li>Non-code</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="clear"></div>
+    </header>
+
+    <div id="main">
+      <div id="main-content" role="main">
+        <article>
+  <h1>Installing Drupal 6 using the Command Line with Drush and Twill</h1>
+  <p>While working on code for Drupal 7, I've been creating and dropping databases all over the place. And each time I drop a database, I have to go to my browser and fill out all the site information again.</p>
+<p>So this got me thinking... does it really need to be this way? (Spoiler: it doesn't)</p>
+<p> A few weeks ago I found Byte Craft kamal's <a href="http://blog.bytecraft.com.my/blog/kamal/2009/12/08/installing-drupal-command-line">awesome post about twill</a>, a really simple language that lets you fill out HTML forms from the command line, and how it can be used to install your Drupal site without using your browser at all!</p>
+<p>In this post, I will expand that solution to show you how you can create scripts to download and install Drupal and then show you a script you can use to automate the recreation of your site when you drop the database.</p>
+
+<h2>Before We Start</h2>
+<p>So, for this to work, you will need:</p>
+<ul>
+  <li>Drush</li>
+  <li>Python</li>
+  <li>twill</li>
+</ul>
+<h3>Drush</h3>
+<p><strong>Drush</strong> can be <a href="http://drupal.org/project/drush">downloaded from drupal.org</a>. Place the drush folder alongside your Drupal sites. On my Mac, this is in the Sites folder.</p>
+<p>You will want to create an alias for drush so you can use it on the command line. Just to be safe, you may want to tell it what version of php5 to use (for instance, I would tell it to use the php5 that came with MAMP).</p>
+<p><code>alias drush='/Applications/MAMP/bin/php5/bin/php ~/Sites/drush/drush.php'</code></p>
+<p>Once this alias is created, you should be able to type drush and get a list of drush commands.</p>
+<h3>Python</h3>
+<p><strong>Python</strong> comes standard with the Mac. It seems that Macs ship with a stale version that may not have been updated in 1-2 years, but this shouldn't be a problem for most people. If your version is older than 2.4, you will want to update.</p>
+<h3>Twill</h3>
+<p><strong>twill </strong>can be downloaded from the <a href="http://twill.idyll.org/">twill author's site</a>. To install it, change directory to the twill directory. You can only run the installer from inside the twill directory, though it does not matter where that directory is in your file system. Then run this command:&nbsp;</p>
+<p><code>sudo python setup.py install</code></p>
+<h2>The Scripts</h2>
+<p>Here is an example shell script to get things started... you could save this as drupalinstall.sh and run the command <code>source drupalinstall.sh</code>. You will probably want to run this script from the same folder where you have your Drupal sites and the drush folder.</p>
+<h3>Shell Script</h3>
+<p><code>drush dl drupal<br /></code><code>echo -n &quot;Enter a directory name: &quot; <br />read -e DIR&nbsp; <br />mv drupal-6.* $DIR <br />cd $DIR <br />install -m 777 sites/default/default.settings.php sites/default/settings.php <br />twill-sh ../drupal_install.py</code></p>
+<h3>Super Easy Explanation</h3>
+<p>This script downloads Drupal, asks you what you want to call the Drupal folder and renames it with the <code>mv </code>command. I am including the assertion that this is Drupal version 6 because in Drupal version 7 you will be able to use Drush to install Drupal without any of this.</p>
+<p>The script then changes directory to your new directory and copies the settings file. It then calls your twill script, which we will create right now.</p>
+<h3>Twill Script&mdash;First Install</h3><p><code>getinput 'Site directory '<br />setglobal directory __input__<br /><br />getinput 'Database name '<br />setglobal db_path __input__<br /><br />getinput 'Database username '<br />setglobal db_user __input__<br /><br />getinput 'Database user password '<br />setglobal db_pass __input__<br /><br />getinput 'Site email '<br />setglobal site_mail __input__<br /><br />getinput 'Admin username '<br />setglobal admin __input__<br /><br />getinput 'Admin email '<br />setglobal mail __input__<br /><br />getinput 'Admin password '<br />setglobal password __input__<br /><br />go http://localhost/${directory}/install.php?profile=default&amp;locale=en<br />code 200<br />find &quot;To set up your&quot;<br /><br />fv 1 db_path ${db_path}<br />fv 1 db_user ${db_user}<br />fv 1 db_pass ${db_pass}<br /><br />submit op<br /><br />find &quot;All necessary changes to&quot;<br /><br />fv 1 site_mail ${site_mail}<br />fv 1 account[name] ${admin}<br />fv 1 account[mail] ${mail}<br />fv 1 account[pass][pass1] ${password}<br />fv 1 account[pass][pass2] ${password}<br /><br />submit op<br /><br />find &quot;Congratulations&quot;<br /><br />clear_cookies<br />go&nbsp; http://localhost/${directory}/<br /><br />fv 1 name ${admin}<br />fv 1 pass ${password}<br /><br />submit op<br />find &quot;Log out&quot;</code></p>
+<h3>Super Easy Explanation</h3><p>The first chunk gets input from the command line to set variables. Then we go to the install page, make sure we found the page and that it returned code 200, and that we found some of the expected text (&quot;To set up your&quot;...) on the page.</p>
+<p>We would now be at the Database Information page, so we use the command <code>fv</code> to set the field values for database name, database user, and database password. We submit the form and check to make sure we find the expected text on the next page (&quot;All necessary changes to&quot;...).</p>
+<p>We are now at the site information page, so we fill in the site email address, the admin user name, the admin email address, and the admin password. We submit and check for the correct text (&quot;Congratulations&quot;...).</p>
+<p>Now we clear the cookies to get rid of the session and use the admin name and password to make sure that we can log in. If we find the Log out button on the page, we have successfully logged in.</p>
+<h3>Twill Script&mdash;Re-Install</h3><p>If we have a sandbox and we've mucked about in the database, we may want to get a fresh database. We can reinstall the site using this script. The values are hard coded in the file to make it a very fast reinstall of your site.</p>
+<p>First you want to drop your database. Then run the command <code>twill-sh drupalsite_reinstall.py</code>.</p>
+<p>Note that you will need to replace 'directory' with the name of your Drupal directory.</p>
+<code>go http://localhost:8888/directory/install.php?profile=default&amp;locale=en<br /><br />find &quot;All necessary changes to&quot;<br /><br />fv 1 site_mail your-email@example.com<br />fv 1 account[name] Admin<br />fv 1 account[mail] admins-email@example.com<br />fv 1 account[pass][pass1] mypassword<br />fv 1 account[pass][pass2] mypassword<br /><br />submit op<br /><br />find &quot;Congratulations&quot;<br /><br />clear_cookies<br />go&nbsp; http://localhost:8888/directory/<br /><br />fv 1 name Admin<br />fv 1 pass mypassword<br /><br /><code>submit op<br />find &quot;Log out&quot;</code></code></p>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lin-clark'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div>
+
+      <aside>
+        <h2>Recent Articles</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> <span>Jul  7</span></li>
+          
+            <li><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> <span>May 24</span></li>
+          
+            <li><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> <span>Apr  3</span></li>
+          
+            <li><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> <span>Mar 15</span></li>
+          
+            <li><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> <span>Aug 18</span></li>
+          
+            <li><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> <span>Aug 16</span></li>
+          
+            <li><a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">More fun with CIA data: SPARQL Views with relationships and contextual filters</a> <span>Aug 11</span></li>
+          
+            <li><a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">Turning the CIA's data into pretty pictures on your site using Views</a> <span>Aug 10</span></li>
+          
+        </ol>
+
+        <h2>Tags</h2>
+        <ol>
+          
+            <li><a href="/blog/tags/rdf/">rdf</a> (12)</a></li>
+          
+            <li><a href="/blog/tags/drupal/">drupal</a> (24)</a></li>
+          
+            <li><a href="/blog/tags/drupal-planet/">drupal-planet</a> (52)</a></li>
+          
+            <li><a href="/blog/tags/screencast/">screencast</a> (8)</a></li>
+          
+            <li><a href="/blog/tags/drush/">drush</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/views/">views</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/theming/">theming</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/css/">css</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/dcsf-home/">dcsf@home</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/api/">api</a> (3)</a></li>
+          
+            <li><a href="/blog/tags/jquery/">jQuery</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/database/">database</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/module-development/">module development</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/sparql/">sparql</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/sioc/">sioc</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/drupal-dev-notes/">Drupal Dev Notes</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/rdfa/">rdfa</a> (4)</a></li>
+          
+            <li><a href="/blog/tags/html-data/">html-data</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/microdata/">microdata</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/html5/">html5</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/git/">git</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/modules/">modules</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/data/">data</a> (2)</a></li>
+          
+        </ol>
+
+        <h2>By Year</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/">2013</a> (1)</a></li>
+          
+            <li><a href="/blog/2012/">2012</a> (3)</a></li>
+          
+            <li><a href="/blog/2011/">2011</a> (12)</a></li>
+          
+            <li><a href="/blog/2010/">2010</a> (17)</a></li>
+          
+            <li><a href="/blog/2009/">2009</a> (4)</a></li>
+          
+        </ol>
+      </aside>
+      </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via ant build script -->
+  <script src="js/mylibs/helper.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    MBP.scaleFix();
+  </script>
+
+  <!-- Debugger - remove for production -->
+  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>

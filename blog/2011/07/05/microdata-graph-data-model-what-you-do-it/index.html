@@ -1,0 +1,223 @@
+<!doctype html>
+<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lin Clark</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-custom.js"></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <header role="banner">
+      <div class="foreground">
+        <h1>Hi, I'm Lin Clark</h1>
+        <h2>I like to code and talk about code</h2>
+        <nav role="navigation">
+          <ul>
+            <li>About</li>
+            <li>Writing</li>
+            <li>Speaking</li>
+            <li>Non-code</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="clear"></div>
+    </header>
+
+    <div id="main">
+      <div id="main-content" role="main">
+        <article>
+  <h1>Microdata as a graph: is the data model what you do with it?</h1>
+  <p>Much is made over the tree vs. graph distinction in discussions about microdata. It recently came up again in the <a href="http://manu.sporny.org/2011/uber-comparison-rdfa-md-uf/#comment-413">comments</a> to Manu Sporny's <a href="http://manu.sporny.org/2011/uber-comparison-rdfa-md-uf">Uber-comparison of RDFa and microdata.</a></p><p>My question is... is it an either/or kind of a situation? I&#39;m interested in other people&#39;s opinions on this, but it seems to me microdata could be characterized as something like tree-default / graph-optional, while RDF is graph enforced.</p>
+<h2>Other people talking about microdata and graphs</h2>
+<p>There was an <a href="http://krijnhoetmer.nl/irc-logs/whatwg/20100424#l-78">interesting discussion of this</a> in the #whatwg IRC channel a little over a year ago. Here&#39;s what Ian Hickson (Hixie) had to say about the issue:</p><blockquote cite="http://krijnhoetmer.nl/irc-logs/whatwg/20100424#l-97">microdata is natively a tree, that you can flatten to a list of triples, from which you can also create a graph</blockquote><b class="citation"><a href="http://krijnhoetmer.nl/irc-logs/whatwg/20100424#l-97">WHATWG IRC log, April 24, 2010</a></b></p><p>And Tab Atkins adds:</p><blockquote cite="http://krijnhoetmer.nl/irc-logs/whatwg/20100424#l-107">Under your wording, othermaciej, Microdata&#39;s data model can indeed be a DAG, if you lean on url-equality to associate nodes as being the same (the same thing you have to do to make RDF a graph).</blockquote><b class="citation"><a href="http://krijnhoetmer.nl/irc-logs/whatwg/20100424#l-107">WHATWG IRC log, April 24, 2010</a></b>
+<h2>microdata as tree</h2><p>Hixie does go on to say that the only reason he would say microdata is a tree rather than a graph is because of the explicitly defined API which handles it as a tree and doesn't follow the URL references. This is also the reason Richard Cyganiak gives for his <a href="http://manu.sporny.org/2011/uber-comparison-rdfa-md-uf/#comment-428">conclusion that the microdata data model is a tree</a> where the RDF data model is a graph.</p><p>This argument means that the API for accessing the data defines the data model.</p>
+<h2>microdata as graph</h2><aside class="sidenote"><h2>UPDATE</h2><p>After I wrote this piece, the microdata to RDF conversion was <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=13314">removed from the microdata spec</a>. A new conversion became part of the HTML Data Task Force's mission. Myself and others were involved in discussions around how the conversion could maintain some of microdata's design priorities (with many points captured well in Richard Cyganiak's <a href="http://richard.cyganiak.de/2011/10/microdata.html#expansion">Extending and Combining Microdata Vocabularies</a>) and Gregg Kellogg lead the work to create a <a href="http://www.w3.org/TR/2012/WD-microdata-rdf-20120112/">working draft</a>.</p></aside><p>The confusion I have with inferring the data model from the data access API is that the spec defines another way of accessing the data... conversion to RDF. It is not the official "API", but it is a specified way of processing the data that is published in the microdata format (current issue with predicate URI generation aside).</p><p>As Tab Atkins says, if you lean on url-equality to associate nodes by using <code>itemid</code>s, then the data can be processed into a graph that connects items across multiple pages and multiple sites. The microdata specification makes explicit that it is up to the vocabulary publisher whether they support this ability:</p>
+<blockquote cite="http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#items">[itemid] must not be specified on elements with an itemscope attribute whose itemtype attribute specifies a vocabulary that does not support global identifiers for items, as defined by that vocabulary's specification.</blockquote><b class="citation"><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#items">WHATWG HTML Standard</a></b><p>It seems to me that microdata facilitates the use of a graph data model and leaves it up to the <em>vocabulary publisher</em> whether or not their vocabulary supports a graph data model. The <em>data publisher</em> then can choose vocabularies that either support or do not support the graph data model.</p><p>Consumers can treat the published data as a tree... or consumers can also choose to treat the published data as a graph. They might choose based on whether a vocabulary that supports a graph model was used. This flexibility makes sense, since for most use cases a tree data model is adequate, at least on the current web. For those use cases that require a graph, the graph data model is there.</p>
+<h2>Is there room for two data models in microdata?</h2>
+<aside class="sidenote"><h3>As an interesting sidenote...</h3><p>While I was Googling around, I came upon the <a href="http://www.w3.org/XML/Datamodel.html">W3C XML data model</a> document. It makes clear that it is an essay, not a spec. It used wording, though, that I thought was interesting: "Note... that this document discusses one possible data model for XML. A more recent document... describes another data model for XML." I don't know the standing of this document and the data model it talks about, but it got me thinking about definitiveness and data models.</p></aside><p>As <a href="http://manu.sporny.org/2011/uber-comparison-rdfa-md-uf/#comment-434">Manu Sporny points out</a>, "This is all pedantic crap that nobody but the standards geeks care about," so maybe it isn't even worth worrying about. And since the tree model is the default and easier to understand, it makes sense to use the tree paradigm when explaining it to newbies.</p>
+<p>However, when we are talking at a more in-depth level, I think that making the binary distinction in our rhetoric—saying RDF is a graph and microdata is a tree—causes the unfortunate problem of people seeing an incompatibility where there isn't one.</p>
+<p>Maybe microdata's data model can be inferred from the primary API, in which case it is a tree. Or maybe there is a need for a more nuanced distinction, and maybe there is a place for this distinction in our rhetoric.</p>
+<p>Any thoughts?</p>
+<aside class="warning"><h2>Before you comment</h2><p>I'm interested in hearing... Is there something that could be articulated more clearly? Is there a technical distinction I am missing? Is there another discussion of this that I should look into?</p><p>What I'm <em>not</em> interested in is polemics.</p></aside>
+<footer>Thanks to <a href="http://blog.foolip.org">Philip Jägenstedt</a> for his help interpreting the microdata spec, <a href="manu.sporny.org">Manu Sporny</a> for the helpful write up, and <a href="http://richard.cyganiak.de/">Richard Cyganiak</a> for the on/offline conversations about this topic and others.</footer>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lin-clark'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div>
+
+      <aside>
+        <h2>Recent Articles</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> <span>Jul  7</span></li>
+          
+            <li><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> <span>May 24</span></li>
+          
+            <li><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> <span>Apr  3</span></li>
+          
+            <li><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> <span>Mar 15</span></li>
+          
+            <li><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> <span>Aug 18</span></li>
+          
+            <li><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> <span>Aug 16</span></li>
+          
+            <li><a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">More fun with CIA data: SPARQL Views with relationships and contextual filters</a> <span>Aug 11</span></li>
+          
+            <li><a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">Turning the CIA's data into pretty pictures on your site using Views</a> <span>Aug 10</span></li>
+          
+        </ol>
+
+        <h2>Tags</h2>
+        <ol>
+          
+            <li><a href="/blog/tags/rdf/">rdf</a> (12)</a></li>
+          
+            <li><a href="/blog/tags/drupal/">drupal</a> (24)</a></li>
+          
+            <li><a href="/blog/tags/drupal-planet/">drupal-planet</a> (52)</a></li>
+          
+            <li><a href="/blog/tags/screencast/">screencast</a> (8)</a></li>
+          
+            <li><a href="/blog/tags/drush/">drush</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/views/">views</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/theming/">theming</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/css/">css</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/dcsf-home/">dcsf@home</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/api/">api</a> (3)</a></li>
+          
+            <li><a href="/blog/tags/jquery/">jQuery</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/database/">database</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/module-development/">module development</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/sparql/">sparql</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/sioc/">sioc</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/drupal-dev-notes/">Drupal Dev Notes</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/rdfa/">rdfa</a> (4)</a></li>
+          
+            <li><a href="/blog/tags/html-data/">html-data</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/microdata/">microdata</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/html5/">html5</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/git/">git</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/modules/">modules</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/data/">data</a> (2)</a></li>
+          
+        </ol>
+
+        <h2>By Year</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/">2013</a> (1)</a></li>
+          
+            <li><a href="/blog/2012/">2012</a> (3)</a></li>
+          
+            <li><a href="/blog/2011/">2011</a> (12)</a></li>
+          
+            <li><a href="/blog/2010/">2010</a> (17)</a></li>
+          
+            <li><a href="/blog/2009/">2009</a> (4)</a></li>
+          
+        </ol>
+      </aside>
+      </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via ant build script -->
+  <script src="js/mylibs/helper.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    MBP.scaleFix();
+  </script>
+
+  <!-- Debugger - remove for production -->
+  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>

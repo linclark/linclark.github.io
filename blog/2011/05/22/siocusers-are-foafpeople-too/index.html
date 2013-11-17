@@ -1,0 +1,238 @@
+<!doctype html>
+<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lin Clark</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-custom.js"></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <header role="banner">
+      <div class="foreground">
+        <h1>Hi, I'm Lin Clark</h1>
+        <h2>I like to code and talk about code</h2>
+        <nav role="navigation">
+          <ul>
+            <li>About</li>
+            <li>Writing</li>
+            <li>Speaking</li>
+            <li>Non-code</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="clear"></div>
+    </header>
+
+    <div id="main">
+      <div id="main-content" role="main">
+        <article>
+  <h1>(sioc)Users are (foaf)People too</h1>
+  <p>The statement above is not actually true, sioc:User (now called sioc:UserAccount) and foaf:Person are related to each other, but not the same thing. </p>
+
+<p>I think most SemWeb and Linked Data people would wholeheartedly agree with this modeling, and when you think about it, it does make sense. A person can have multiple user accounts, or multiple people can share one user account. So it does actually represent the real world pretty well... but lately, I’ve started wondering whether it is worth the cost. The problem is, most Drupal site admins aren’t thinking too hard about what a user really is.</p>
+<p>For example, Drupal has users, which are modeled as a sioc:UserAccount. And for years we’ve had this neat field in Drupal called User Reference, which can be used to make a connection between a node and a user. For example, let’s say you have a company Web site which needs to <a href="http://gotdrupal.com/videos/drupal-views-relationships">list departments and their employees</a>. You want to create a connection between the department and it’s employees, so you would use a User Reference field on the department.</p>
+
+<p>… And did you see what just happened there? We just conflated the user and the person. </p>
+
+<p>It isn’t just in Drupal site administration where we do this. For example, I collaborate with Stéphane Corlosquet on code on drupal.org, where he goes by scor. I often say things like “scor hosted an RDF code sprint”, or that “Stéphane just posted an issue”. If I were being totally accurate, the subjects of those two sentences wouldn’t be interchangeable... but in my mind, they are.</p>
+
+<p>It is easy to insert the user when you have a birds-eye perspective over an existing system, such as when you are building extractors for social networking sites. However, in the case where we are building more complex and dynamic networks of assertions, it doesn’t map well to the way we think. This is even more true when you consider the average site admin, uninitiated in the role modeling ways of the SemWeb community.</p>
+
+<h2>The larger question</h2>
+
+<p>I think this highlights a question with RDF vocabularies in general... should they try to represent the world as it is, or be closer to the world of our casual perception and the fuzzy way we communicate about things in real life. This is the difference between proscribing how people should see the world, and describing how they do see the world.</p>
+
+<p>With these vocabularies, what we’re really creating is a dictionary for Web developers to describe data relationships. To achieve the ends of the Linked Data effort, we need this dictionary to be widely adopted. For this, we need to reduce the lexicographic information costs—the amount of effort it takes for someone to assimilate our dictionary into their conception of the world and into everyday usage.</p>
+
+<p>The thing that really attracted me to the work that Stéphane was doing in Drupal with RDF CCK, and what really motivated me to get involved in this work, was that it integrated with a workflow that was already in use by hundreds of thousands of site admins. It was an integration that took a concept the site admin was already familiar with, entities with fields, and extended it to describe resources and properties. It was unobtrusive, it didn’t change the existing user interaction but just added a tiny supplement. </p>
+
+<p>In contrast, if we tell site admins that there are now two different concepts (user and person) where there was once one, and it’s up to them to figure out how to disentangle which fields belong to the user and which fields belong to the person, the technology we have introduced starts to become obtrusive.</p>
+
+<h2>What do you think?</h2>
+
+<p>Kjetil Kjernsmo pointed out the <a href="http://sioc-project.org/node/134">complexity of the user/person distinction</a> in an email to the SIOC-dev list a while back and there have been other <a href="http://danbri.org/words/2010/01/14/549">related</a> <a href="http://sioc-project.org/node/235">discussions</a> as well. The SIOC team has been open to feedback like this and has tried to make the vocabulary as easy to use as possible. </p>
+
+<p>That’s why I’m wondering whether others who are building applications find the same thing that I have and that Kjetil references. Have others found the user/person distinction complicates things? Are there particular, implemented use cases where this added abstraction is useful? How can Drupal deal with this added complexity in the site admin’s interaction?</p>
+
+<aside>Note: I should note that I was one of the people pushing for the establishment of a separate foaf:Person resource with it’s own URI during the later part of the RDF Mapping API development cycle... it’s one of those things that makes a lot of sense when you’re modeling that maybe doesn’t make so much sense when you’re actually interacting with a system in a real life situation.</aside>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lin-clark'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+      </div>
+
+      <aside>
+        <h2>Recent Articles</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> <span>Jul  7</span></li>
+          
+            <li><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> <span>May 24</span></li>
+          
+            <li><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> <span>Apr  3</span></li>
+          
+            <li><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> <span>Mar 15</span></li>
+          
+            <li><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> <span>Sep 14</span></li>
+          
+            <li><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> <span>Aug 18</span></li>
+          
+            <li><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> <span>Aug 16</span></li>
+          
+            <li><a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">More fun with CIA data: SPARQL Views with relationships and contextual filters</a> <span>Aug 11</span></li>
+          
+            <li><a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">Turning the CIA's data into pretty pictures on your site using Views</a> <span>Aug 10</span></li>
+          
+        </ol>
+
+        <h2>Tags</h2>
+        <ol>
+          
+            <li><a href="/blog/tags/rdf/">rdf</a> (12)</a></li>
+          
+            <li><a href="/blog/tags/drupal/">drupal</a> (24)</a></li>
+          
+            <li><a href="/blog/tags/drupal-planet/">drupal-planet</a> (52)</a></li>
+          
+            <li><a href="/blog/tags/screencast/">screencast</a> (8)</a></li>
+          
+            <li><a href="/blog/tags/drush/">drush</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/views/">views</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/theming/">theming</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/css/">css</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/dcsf-home/">dcsf@home</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/api/">api</a> (3)</a></li>
+          
+            <li><a href="/blog/tags/jquery/">jQuery</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/database/">database</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/module-development/">module development</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/sparql/">sparql</a> (5)</a></li>
+          
+            <li><a href="/blog/tags/sioc/">sioc</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/drupal-dev-notes/">Drupal Dev Notes</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/rdfa/">rdfa</a> (4)</a></li>
+          
+            <li><a href="/blog/tags/html-data/">html-data</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/microdata/">microdata</a> (6)</a></li>
+          
+            <li><a href="/blog/tags/html5/">html5</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/git/">git</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/modules/">modules</a> (1)</a></li>
+          
+            <li><a href="/blog/tags/data/">data</a> (2)</a></li>
+          
+        </ol>
+
+        <h2>By Year</h2>
+        <ol>
+          
+            <li><a href="/blog/2013/">2013</a> (1)</a></li>
+          
+            <li><a href="/blog/2012/">2012</a> (3)</a></li>
+          
+            <li><a href="/blog/2011/">2011</a> (12)</a></li>
+          
+            <li><a href="/blog/2010/">2010</a> (17)</a></li>
+          
+            <li><a href="/blog/2009/">2009</a> (4)</a></li>
+          
+        </ol>
+      </aside>
+      </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via ant build script -->
+  <script src="js/mylibs/helper.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    MBP.scaleFix();
+  </script>
+
+  <!-- Debugger - remove for production -->
+  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+
+</body>
+</html>
