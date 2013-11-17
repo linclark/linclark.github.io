@@ -1,164 +1,124 @@
-<h2><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> </h2><span>Jul  7</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>You may have seen the announcement last week that Dries <a href="https://drupal.org/node/1784234#comment-7612081">approved</a> and <a href="https://drupal.org/commitlog/commit/2/36975492e9222753eba723cd5e07da1de1bb9ab1">committed</a> a patch which changes Drupal core's default RDF mappings. When any new Drupal 8 site is installed, the markup will include RDFa that uses terms from the <a href="http://schema.org/">Schema.org</a> vocabulary. Of course, as with anything Schema.org, this announcement got some attention.</p>
-<p>Unfortunately, what's been getting less attention are the multiple other issues that still need to be fixed if we're really going to support RDFa (or microdata, or microformats, for that matter) in Drupal 8 and support it well.</p>
-<a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">more &raquo;</a><h2><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> </h2><span>May 24</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-Recent developments in microdata publishing support in Views/Panels and Google Summer of Code's support for microdata publishing in contrib field formatters are helping push the Microdata module closer to release.
-<a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">more &raquo;</a><h2><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> </h2><span>Apr  3</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>By my rough count, there are 150 contrib projects for Drupal 7 that declare new field types as part of their central module. I've listed the projects here by their usage statistics.</p>
-<p>Please let me know if I missed your field module!</p>
-<a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">more &raquo;</a><h2><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> </h2><span>Mar 15</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>The essence of Drupal is complex interactions between modules. These interactions currently take the form of hooks. The most difficult (and most useful) thing for a Drupal developer to understand is how different sets of modules interact using these hooks and in which order.</p><p>Even though they are the heart of our system, we don&#39;t have a good way of documenting these interactions. While the API docs do contain this information for some hooks (eg, <a href="http://api.drupal.org/api/drupal/modules%21node%21node.api.php/function/hook_node_load/7">hook_node_load</a>), it&#39;s hard to grasp the overall picture from reading docblocks.</p><p>This causes a bigger problem than just the learning curve. It also makes it harder for us to discuss changes in APIs and architecture. We have been seeing this in the Drupal 8 development cycle&mdash;we are considering major overhauls of systems, and it&#39;s unclear to many what the impacts of these decisions are. The only people who can intelligently participate are those who are intensely involved in the architecting process or those who take a considerable amount of time to step through the code. As sun points out in <a href="http://www.unleashedmind.com/en/blog/sun/drupal-8-the-path-forward">Drupal 8: The Path Forward</a>, this communication challenge remains unresolved.</p><p>We need to find a way to communicate about these interactions which are so central to what we do.&nbsp;I have recently starting working with a visualization technique that helps me understand these interactions better, and I would be interested to hear whether others find it helpful as well.</p>
-<a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">more &raquo;</a><h2><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> </h2><span>Sep 14</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The <a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html">announcement</a> has gotten people really interested in inline structured data such as microdata and RDFa.</p>
+<!doctype html>
+<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Lin Clark</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
+  <!-- For iPhone 4 with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
+  <!-- For first-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
+  <!-- For nokia devices: -->
+  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
+
+  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css?v=1">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-custom.js"></script>
+  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
+  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
+</head>
+
+<body>
+
+  <div id="container">
+    <header role="banner">
+      <!--<nav role="navigation">
+        <ul>
+          <li><a href="/writing">Writing</a></li>
+          <li><a href="/speaking">Speaking</a></li>
+          <li><a href="">Non-code</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </nav>-->
+      <div id="linclark-image">
+        <div></div>
+      </div>
+      <div>
+        <h1>Hi, I'm <a href="/">Lin Clark</a></h1>
+      </div>
+      <div>
+        <p>I like to code and talk about code</p>
+      </div>
+    </header>
+
+    <div id="main" class="clear">
+      <div id="main-content" role="main">
+        <article>
+  <h1>Microdata in Drupal early preview</h1>
+  <p>On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The <a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html">announcement</a> has gotten people really interested in inline structured data such as microdata and RDFa.</p>
 <p>This screencast shows how you can use the microdata module to place Schema.org terms. This is an early preview—very few field formatters have microdata support at this time and the module is still changing quite a bit—but I thought people might be interested in the direction the module is heading.</p>
-<a href="/blog/2011/09/14/microdata-drupal-early-preview/">more &raquo;</a><h2><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> </h2><span>Sep 14</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>I posted this video a couple of weeks ago but didn't get a chance to write it up. It demonstrates building a module that creates a view using SPARQL on whatever site it is installed on.</p>
-<p>If you provide a dataset and it is available with SPARQL, this can be a really great way to help people understand how to use your data. Because users who install the module can use the Views user interface to alter the view that is created, it can be a great starting point for experimentation by users who don't know so much about your data or building views.</p>
-<a href="/blog/2011/09/14/building-modules-top-sparql-views/">more &raquo;</a><h2><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> </h2><span>Aug 18</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Recently, there has been quite a row about a tweet sent out by the DrupalCon Twitter account. The tweet suggested that people look at the attendees page to reconnect with the attractive developer/designer they met at last year's DrupalCon. A number of people pointed out that this subtly (though inadvertently) promotes a sexually charged environment at the conference.</p><p>For the most part I have stayed out of the discussion, but in catching up on some blog posts last night I saw some troubling reactions, with people being quite callous to the experiences of those who found the tweet off-putting.</p>
-<p>I don't usually blog about these kinds of issues, but I wanted to share some of my experiences that I think can help inform the discussion and help people understand some of the sensitivities.</p>
-<p>Not all of these experiences are directly related to the tweet at hand, but I do believe the "Drupal isn't immune" section does directly relate and is a very concrete example of how women can sometimes be treated at these events.</p>
-<a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">more &raquo;</a><h2><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> </h2><span>Aug 16</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Interest in microdata has been on the rise since the <a href="http://googlewebmastercentral.blogspot.com/2011/06/introducing-schemaorg-search-engines.html">schema.org announcement</a> in June.</p><p>I had fortunately already been looking at the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html">microdata spec</a> and thinking about how the work to get RDFa output in core could be repurposed for microdata, so I <a href="http://drupal.org/project/microdata">started a project</a> that day.</p>
-<p>Since microdata is based on RDFa, there is a lot that can be repurposed. But as I noted in <a href="http://lin-clark.com/blog/two-meanings-semantics-html5">my last post on the subject</a>, there are also small differences between the specs... and in some cases, these small differences have a big impact.</p>
-<p>We need to start thinking about those impacts.</p>
-<a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">more &raquo;</a><h2><a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">More fun with CIA data: SPARQL Views with relationships and contextual filters</a> </h2><span>Aug 11</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Yesterday, I posted about <a href="http://lin-clark.com/blog/turning-cias-data-pretty-pictures-your-site-using-views">reusing the CIA's data</a> on your site. I demonstrated how you can use Views to access the CIA World Factbook data and turn it into charts.</p>
-<p>You can enhance these views further by using relationships to get information about related things, such as bordering countries, and you can use contextual filters to tailor the SPARQL results to your node content.</p>
-<a href="/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/">more &raquo;</a><h2><a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">Turning the CIA's data into pretty pictures on your site using Views</a> </h2><span>Aug 10</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>There are a lot of data providers who publish their data openly for reuse. Surprisingly, <a href="http://ckan.net/package/cia-world-factbook">the CIA is one</a> of them.</p>
-<p>Because of this, data geeks can take it and turn it into something that's easy for others to reuse, using open data formats. And because it's available in an open data format, platforms like <a href="http://beta.kasabi.com">Kasabi</a> can load it on to their big servers and provide ways for other sites to access and query it, like a SPARQL endpoint. And because it is provided in a SPARQL endpoint, it is easy to reuse it in your Drupal site using Views.</p>
-<a href="/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/">more &raquo;</a><h2><a href="/blog/2011/07/22/writing-scripts-clone-contrib-projects-gitdrupalorg/">Writing scripts to clone contrib projects from git.drupal.org</a> </h2><span>Jul 22</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>As part of my masters thesis, I&rsquo;m looking into innovation diffusion within Drupal (I think y'all know which one ;).</p><p>In order to &lsquo;grep&rsquo; against the codebase, I needed a copy of the most recent versions of ALL of Drupal 7 contrib, which was easy to do back when we used CVS (even a little too easy when you realized that you accidentally started downloading 7,000 projects). However, this is <a href="http://drupal.org/node/1057386">not so easy with git.</a></p><p>Before starting, I asked in #drupal-contribute whether pulling all of contrib for research purposes would be frowned upon, since it can really soak up a lot of server resources. Folks said it was ok and encouraged me to share whatever script I came up with... so here it is.</p>
-<a href="/blog/2011/07/22/writing-scripts-clone-contrib-projects-gitdrupalorg/">more &raquo;</a><h2><a href="/blog/2011/07/21/two-meanings-semantics-html5/">The two meanings of semantics in HTML5</a> </h2><span>Jul 21</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>There is a lot of confusion around HTML5 and RDFa, both in the Drupal community and outside of it. That&rsquo;s why I decided to <a href="http://lin-clark.com/blog/theming-html5-and-rdfa-drupal-7">redevelop my site in Drupal 7 with HTML5</a>, using a <a href="http://drupal.org/project/adaptivetheme">base theme</a> available on Drupal.org, to see for myself what it's like using HTML5 and RDFa together.</p><p>HTML5 is the incontestable future of the Web, and it is becoming more and more clear that inline structured data is also going to be a fundamental part of the future Web... and, with the <a href="http://buytaert.net/semantic-web-and-drupal-video">current core support for RDFa</a> and the <a href="http://buytaert.net/html5-in-drupal-8">future core support for HTML5</a>, Drupal has an interest in both.</p>
-<a href="/blog/2011/07/21/two-meanings-semantics-html5/">more &raquo;</a><h2><a href="/blog/2011/07/05/microdata-graph-data-model-what-you-do-it/">Microdata as a graph: is the data model what you do with it?</a> </h2><span>Jul  5</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Much is made over the tree vs. graph distinction in discussions about microdata. It recently came up again in the <a href="http://manu.sporny.org/2011/uber-comparison-rdfa-md-uf/#comment-413">comments</a> to Manu Sporny's <a href="http://manu.sporny.org/2011/uber-comparison-rdfa-md-uf">Uber-comparison of RDFa and microdata.</a></p><p>My question is... is it an either/or kind of a situation? I&#39;m interested in other people&#39;s opinions on this, but it seems to me microdata could be characterized as something like tree-default / graph-optional, while RDF is graph enforced.</p>
-<a href="/blog/2011/07/05/microdata-graph-data-model-what-you-do-it/">more &raquo;</a><h2><a href="/blog/2011/06/26/theming-html5-and-rdfa-drupal-7/">Theming with HTML5 and RDFa in Drupal 7</a> </h2><span>Jun 26</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>I'm a big fan of inline structured data like RDFa because it makes it easy to share information between sites. For example, if my research institute listed my speaking appearances with RDFa, I could just use Views to display those presentations on my site. Instead of getting the list from my MySQL database, Views would use the external Web page as its "database".</p>
+<iframe width="480" height="390" src="http://www.youtube.com/embed/MbkusrNmS6U?rel=0" frameborder="0" allowfullscreen></iframe>
+</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lin-clark'; // required: replace example with your forum shortname
+  var disqus_url = 'http://lin-clark.com' + window.location.pathname;
 
-<p>I'm also a big fan of HTML5. It is a big step towards a more exciting, more usable, and more developer friendly Web. </p>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-<p>Drupal has made commitments to both, with its support for RDFa in core in Drupal 7 and its move towards HTML 5 output in Drupal 8. That's why I wanted to give the RDFa and HTML 5 compatibility a test drive, starting with my own site.</p>
-<a href="/blog/2011/06/26/theming-html5-and-rdfa-drupal-7/">more &raquo;</a><h2><a href="/blog/2011/05/26/how-start-contributing-modules-drupalorg/">How to Start Contributing to Modules on Drupal.org</a> </h2><span>May 26</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Drupal Dev Notes is a new series of screencasts that I'm starting to share all of the Drupal development know-how, habits and tricks that I wish I'd learned the easy way.</p>
 
-<p>The first of these is how to contribute to projects on drupal.org. The best way to get started with contrib is by making small fixes to other people's projects. This way you can learn Drupal coding standards and best practices gradually, with help from other Drupal developers. It can also be really fun :)</p>
-<a href="/blog/2011/05/26/how-start-contributing-modules-drupalorg/">more &raquo;</a><h2><a href="/blog/2011/05/22/siocusers-are-foafpeople-too/">(sioc)Users are (foaf)People too</a> </h2><span>May 22</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>The statement above is not actually true, sioc:User (now called sioc:UserAccount) and foaf:Person are related to each other, but not the same thing. </p>
+      </div>
+    </div>
+    <footer>
 
-<p>I think most SemWeb and Linked Data people would wholeheartedly agree with this modeling, and when you think about it, it does make sense. A person can have multiple user accounts, or multiple people can share one user account. So it does actually represent the real world pretty well... but lately, I’ve started wondering whether it is worth the cost. The problem is, most Drupal site admins aren’t thinking too hard about what a user really is.</p>
-<a href="/blog/2011/05/22/siocusers-are-foafpeople-too/">more &raquo;</a><h2><a href="/blog/2010/11/05/importing-syncing-content-external-sites-wikipedia/">Importing / Syncing Content from external sites like Wikipedia</a> </h2><span>Nov  5</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>UPDATE: This is for SPARQL Views in Drupal 6. The module has changed significantly in Drupal 7.</p><p>Importing and syncing content is the capability that inspired me to start learning about the Semantic Web, back when I was trying to figure out how to get a <a href="http://lin-clark.com/universities-rdf-process">handle on the entropy of University academic department administration</a>.</p>  <p>That's why I did a little dance in my chair when I first tried out the powerful combination of Views, Feeds View Parser, and Feeds with my new module, SPARQL Views. With this combination, you can create a query on a SPARQL endpoint with Views, and then map that to a content type with Feeds.</p>  <p>Here are two screencasts that show how you can import and sync content with Wikipedia, and I'm posting the related code and links below.</p> 
-<a href="/blog/2010/11/05/importing-syncing-content-external-sites-wikipedia/">more &raquo;</a><h2><a href="/blog/2010/07/12/introducing-sparql-views/">Introducing SPARQL Views</a> </h2><span>Jul 12</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>UPDATE: This describes SPARQL Views in Drupal 6. The module has changed significantly in Drupal 7.</p><p>As some of you know, I have been working on a Google Summer of Code project this summer. My aim is to make it easy for site administrators to pull data from RDF datasets into their sites and have that data actually contribute to the site, instead of just being a novelty.</p>
-<a href="/blog/2010/07/12/introducing-sparql-views/">more &raquo;</a><h2><a href="/blog/2010/05/09/default-theme-implementations-notes/">Default theme implementations--Notes</a> </h2><span>May  9</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>I consider myself lucky to have started with Drupal in a job where I&nbsp;had to do a lot of custom theming. It helped me understand the importance of separation of concerns between the data manipulation and the actual display of the data. It also helped me grok the <a href="http://www.garfieldtech.com/blog/mvc-vs-pac">Presentation-Abstraction-Control stuff that everyone (or mostly Larry Garfield) talks about</a>.</p><p>I&nbsp;was hoping that <a href="http://sf2010.drupal.org/conference/sessions/default-theme-implementations-guide-module-developers-who-want-sweet-love-morten">this presentation</a> would be a good resource for my colleagues at DERI, most of whom aren't too familiar with the theme layer. Unfortunately, I'm not sure whether module developers who haven't worked with the theme layer would understand how to make their output themable after watching this presentation... but I picked up some neat tips.</p><p>Sidenote: The subtitle of this session was &quot;a guide for module developers who want sweet love from Morten and JohnAlbin&quot;... and you should strive for their sweet love.</p>
-<a href="/blog/2010/05/09/default-theme-implementations-notes/">more &raquo;</a><h2><a href="/blog/2010/05/06/grok-drupal-7-theming-notes/">Grok Drupal (7) Theming--Notes</a> </h2><span>May  6</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Even though I have been theming for a while, I thought I would check out my Google Summer of Code mentor Laura Scott's presentation on <a href="http://sf2010.drupal.org/conference/sessions/grok-drupal-7-theming">Groking Drupal (7) Theming</a>.</p><p>It is a great introduction that really helps form a mental model for how the theming layer works. It would be great for some of the other researchers here at DERI who haven't yet grappled with the theme layer... really a must watch for anyone who is creating modules with HTML output who hasn't yet figured out the theme layer.
-<a href="/blog/2010/05/06/grok-drupal-7-theming-notes/">more &raquo;</a><h2><a href="/blog/2010/05/06/databases-next-generation-notes/">Databases: The Next Generation--Notes</a> </h2><span>May  6</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>One of the DrupalCon presentations that I wanted to be sure to watch early on was <a href="http://sf2010.drupal.org/conference/sessions/databases-next-generation">Databases: The Next Generation</a>, presented by database maintainer and self described gadfly Larry Garfield.</p><p>There have been some big changes in the Database Abstraction layer in Drupal 7, which I've been using in patches to core and porting a contib module or two to D7. I've already  groked dynamic queries and why they are great from reading up on PDO,  but since most of my database experience has been using Drupal 6, I  still haven't quite figured out how transactions work even though  they've been around in databases for a long time ....and I have no idea  about how to make master/slave work.</p><p>Even though, as Garfield says, everything in this presentation is covered in the docs at http://drupal.org/node/310069, this presentation is a great and worthwhile intro to the D7 db abstraction layer.</p>
-<a href="/blog/2010/05/06/databases-next-generation-notes/">more &raquo;</a><h2><a href="/blog/2010/05/06/20-apis-every-drupal-developer-should-know-notes/"> 20 APIs Every Drupal Developer Should Know--Notes</a> </h2><span>May  6</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p><a href="http://sf2010.drupal.org/conference/sessions/20-apis-every-drupal-developer-should-know">This session</a> just went through 20 of the most used APIs in Drupal and described quicly what they can be used for. The presenter has also posted <a href="http://www.trellon.com/category/blog-tags/20-apis-20-days">blog posts about some of these APIs</a> in the month leading up to DrupalCon.</p>
-<a href="/blog/2010/05/06/20-apis-every-drupal-developer-should-know-notes/">more &raquo;</a><h2><a href="/blog/2010/04/28/jquery-designers-and-themers-notes/">jQuery for Designers and Themers--Notes</a> </h2><span>Apr 28</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>I've been reading up on JavaScript and jQuery in Drupal in preparation for my upcoming Google Summer of Code project, so I thought I'd check out the JavaScript presentations at DCSF, starting with <a href="http://sf2010.drupal.org/conference/sessions/jquery-designers-and-themers">this one</a>.</p><p>This is a simple introduction to attaching a simple JS file through the theme layer and using jQuery to mess around with things, going into jQuery UI at the end. Bevan also shows some good debug techniques in Firebug.</p><p>Here are some Drupal specific highlights for the readers.</p>
-<a href="/blog/2010/04/28/jquery-designers-and-themers-notes/">more &raquo;</a><h2><a href="/blog/2010/04/28/how-drupal-works-architects-overview-notes/">How Drupal Works: An Architect's Overview—Notes</a> </h2><span>Apr 28</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Through the Lullabot podcasts, Jeff Eaton (and the other Lullabots) gave me my introduction to Drupal. I'm not sure how he packs his Drupal chatter with so much information and hilarity all at the same time, but the combination is definitely one of the things that got me hooked on Drupal.&nbsp;</p><p>So reading quotes from <a id="wjve" title="DCSF&mdash;How Drupal Works: An Architect's Overview" href="http://sf2010.drupal.org/conference/sessions/how-drupal-works-architects-overview">this presentation</a> as they popped up on Twitter is one of the things that made me most angry at the ash cloud. But it is now up online (!) thanks to the amazing DCSF organizers (double !).</p>    <p>Here are my notes. I've removed most of the funny (and got tired at the end), so you should really watch <a id="rkom" title="DCSF&mdash;How Drupal Works: An Architects Overview" href="http://sf2010.drupal.org/conference/sessions/how-drupal-works-architects-overview">the real thing</a>.</p>   
-<a href="/blog/2010/04/28/how-drupal-works-architects-overview-notes/">more &raquo;</a><h2><a href="/blog/2010/03/24/intro-drupal-7-theming-fields-and-nodes-templates/">Intro to Drupal 7: Theming Fields and Nodes with Templates</a> </h2><span>Mar 24</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Override Drupal's default HTML output using templates. You can override individual fields and content types.</p> <p>Video #8 in this Intro to Drupal 7 series.   </p><object width="480" height="385"><param value="http://www.youtube.com/v/sxZQqgvJk3s&amp;hl=en_US&amp;fs=1&amp;" name="movie" /><param value="true" name="allowFullScreen" /><param value="always" name="allowscriptaccess" /><embed width="480" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/sxZQqgvJk3s&amp;hl=en_US&amp;fs=1&amp;"></embed></object><a href="/blog/2010/03/24/intro-drupal-7-theming-fields-and-nodes-templates/">more &raquo;</a><h2><a href="/blog/2010/03/22/intro-drupal-7-basic-theming-zen-and-css/">Intro to Drupal 7: Basic Theming with Zen and CSS</a> </h2><span>Mar 22</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p><span class="description">This screencast gives an introduction to  creating a subtheme of Zen and modifying it with CSS.  </span></p><p><span class="description">Video #7 in this Intro to Drupal series.&nbsp; </span></p><object height="385" width="480"><param name="movie" value="http://www.youtube.com/v/sCg4sTA3DlQ&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed height="385" width="480" src="http://www.youtube.com/v/sCg4sTA3DlQ&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object><a href="/blog/2010/03/22/intro-drupal-7-basic-theming-zen-and-css/">more &raquo;</a><h2><a href="/blog/2010/03/16/intro-drupal-7-intro-views-pt-1/">Intro to Drupal 7: Intro to Views, Pt. 1</a> </h2><span>Mar 16</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Use views to create lists of content in Drupal 7. This screencast demonstrates creating a view that has multiple displays, using the whole node or just fields in the list, customizing the way fields are displayed, and changing the HTML formatting of...</p><a href="/blog/2010/03/16/intro-drupal-7-intro-views-pt-1/">more &raquo;</a><h2><a href="/blog/2010/03/15/intro-drupal-7-creating-content-types/">Intro to Drupal 7: Creating Content Types</a> </h2><span>Mar 15</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Video #5 in this Intro to Drupal series, I cover how you can create content types in Drupal 7 now that the field system is in place.</p><!--break--><p><object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/JsuMnG_5Yko&amp;hl=en_US&amp;fs=1" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed width="425" height="344" src="http://www.youtube.com/v/JsuMnG_5Yko&amp;hl=en_US&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object></p><a href="/blog/2010/03/15/intro-drupal-7-creating-content-types/">more &raquo;</a><h2><a href="/blog/2010/02/23/intro-drupal-7-using-drush/">Intro to Drupal 7: Using Drush</a> </h2><span>Feb 23</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>In this screencast, I give a basic demonstration of how to use Drush with the Acquia Stack.</p><!--break--><object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/hwVcNBNBDUU&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed width="480" height="385" src="http://www.youtube.com/v/hwVcNBNBDUU&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object><a href="/blog/2010/02/23/intro-drupal-7-using-drush/">more &raquo;</a><h2><a href="/blog/2010/02/22/intro-drupal-7-installing-modules/">Intro to Drupal 7: Installing Modules</a> </h2><span>Feb 22</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>In this video, I demonstrate how to download and install modules through the Drupal 7 user interface.</p><!--break--> <object width="480" height="385"><param value="http://www.youtube.com/v/BPjgrnj9t4Q&amp;hl=en_US&amp;fs=1&amp;" name="movie" /><param value="true" name="allowFullScreen" /><param value="always" name="allowscriptaccess" /><embed width="480" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/BPjgrnj9t4Q&amp;hl=en_US&amp;fs=1&amp;"></embed></object><a href="/blog/2010/02/22/intro-drupal-7-installing-modules/">more &raquo;</a><h2><a href="/blog/2010/02/21/intro-drupal-7-configuring-your-drupal-7-site/">Intro to Drupal 7: Configuring your Drupal 7 site</a> </h2><span>Feb 21</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>After you install your site, you can change the site name and logo, change the visual look with a theme, and add content.</p><!--break--><object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/IT_TZEQEm5c&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed width="480" height="385" src="http://www.youtube.com/v/IT_TZEQEm5c&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object><a href="/blog/2010/02/21/intro-drupal-7-configuring-your-drupal-7-site/">more &raquo;</a><h2><a href="/blog/2010/02/20/intro-drupal-7-installing-drupal-7-acquia-stack-installer/">Intro to Drupal 7: Installing Drupal 7 with the Acquia Stack Installer</a> </h2><span>Feb 20</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>In this screencast, I demonstrate how to use the Acquia Stack installer to install MySQL and Apache with PHP  so that you can have a Drupal 7 web site on your personal computer.</p><p><object width="480" height="385"><param value="http://www.youtube.com/v/mcaQioe3zr0&amp;hl=en_US&amp;fs=1&amp;" name="movie" /><param value="true" name="allowFullScreen" /><param value="always" name="allowscriptaccess" /><embed width="480" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/mcaQioe3zr0&amp;hl=en_US&amp;fs=1&amp;"></embed></object></p><a href="/blog/2010/02/20/intro-drupal-7-installing-drupal-7-acquia-stack-installer/">more &raquo;</a><h2><a href="/blog/2010/01/11/installing-drupal-6-using-command-line-drush-and-twill/">Installing Drupal 6 using the Command Line with Drush and Twill</a> </h2><span>Jan 11</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>While working on code for Drupal 7, I've been creating and dropping databases all over the place. And each time I drop a database, I have to go to my browser and fill out all the site information again.</p>
-<p>So this got me thinking... does it really need to be this way? (Spoiler: it doesn't)</p>
-<p> A few weeks ago I found Byte Craft kamal's <a href="http://blog.bytecraft.com.my/blog/kamal/2009/12/08/installing-drupal-command-line">awesome post about twill</a>, a really simple language that lets you fill out HTML forms from the command line, and how it can be used to install your Drupal site without using your browser at all!</p>
-<p>In this post, I will expand that solution to show you how you can create scripts to download and install Drupal and then show you a script you can use to automate the recreation of your site when you drop the database.</p>
-<a href="/blog/2010/01/11/installing-drupal-6-using-command-line-drush-and-twill/">more &raquo;</a><h2><a href="/blog/2009/12/14/semantic-web-and-drupal-pt-2/">The Semantic Web and Drupal, pt. 2</a> </h2><span>Dec 14</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>So I surreptitiously posted the second part of my talk on <strong>The Semantic Web and Drupal</strong>, fully intending to spread the word but also fully procrastinating... so thank you to <a href="http://twitter.com/derigalway">@derigalway</a>, <a href="http://twitter.com/akioz">@akioz</a>, <a href="http://twitter.com/crizzirc">@crizzirc</a>, <a href="http://twitter.com/johnbreslin">@johnbreslin</a>, <a href="http://twitter.com/cygri">@cygri </a>and others for spreading the word for me.</p>
-<p>If you haven't seen it yet, here it is:</p><object height="344" width="425"><param name="movie" value="http://www.youtube.com/v/VvEVoY0sl6o&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed height="344" width="425" src="http://www.youtube.com/v/VvEVoY0sl6o&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-<a href="/blog/2009/12/14/semantic-web-and-drupal-pt-2/">more &raquo;</a><h2><a href="/blog/2009/11/27/semantic-web-and-drupal-drupalcamp-vienna/">The Semantic Web and Drupal at DrupalCamp Vienna</a> </h2><span>Nov 27</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>I delivered this talk at DrupalCamp Vienna, I only have the first part up but the second part (all about the Semantic Web technologies that are now in Drupal) is coming soon!</p>
-<object height="344" width="425"><param name="movie" value="http://www.youtube.com/v/xcPf4PeF57Y&amp;hl=en_US&amp;fs=1&amp;" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed height="344" width="425" src="http://www.youtube.com/v/xcPf4PeF57Y&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-<a href="/blog/2009/11/27/semantic-web-and-drupal-drupalcamp-vienna/">more &raquo;</a><h2><a href="/blog/2009/06/18/drupal-pittsburgh-june-best-modules-new-drupal-users/">Drupal Pittsburgh June; Best modules for new Drupal users</a> </h2><span>Jun 18</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>We had the fourth <a href="http://groups.drupal.org/pittsburgh-and-southwestern-pa">Drupal Pittsburgh </a>meeting on Tuesday at the Brillobox.</p><p>In contrast to most of our meetings, new users outweighed the old hands at this one, so it turned into a session introducing everyone to those essential modules that make Drupal...</p><a href="/blog/2009/06/18/drupal-pittsburgh-june-best-modules-new-drupal-users/">more &raquo;</a><h2><a href="/blog/2009/05/02/universities-rdf/">Universities in RDF</a> </h2><span>May  2</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>What if you could find all of the academics working in your field across all universities in the world with a simple, SQL-like query? What if you could filter your search based on the region the academics are working in, the projects they have worked on, the languages they speak and then get a list of the courses that they offer? All with one query.</p>
-<p>I don't know about you, but I totally geek out over that prospect.</p>
-    <a href="/blog/2009/05/02/universities-rdf/">more &raquo;</a>
+    </footer>
+  </div>
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via ant build script -->
+  <script src="/js/mylibs/helper.js"></script>
+  <script src="/js/script.js"></script>
+  <!-- end concatenated and minified scripts-->
+
+  <script>
+    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+    MBP.scaleFix();
+  </script>
+
+  <!-- Debugger - remove for production -->
+  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
+
+  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
+  <script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+<div class="clear"></div>
+</body>
+</html>
