@@ -1,7 +1,9 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="refresh" content="1;url=/blog/my-post-with-aliases/" />
-  </head>
-</html>
+                  <head>
+                    <meta http-equiv="refresh" content="0; url=blog/2010/03/22/intro-drupal-7-basic-theming-zen-and-css/" />
+                    <meta name="robots" content="noindex,follow" />
+<script>location.history.replaceState(null, null, 'http://lin-clark.com')</script>
+                  </head>
+                  <body>
+                  </body>
+                </html>
