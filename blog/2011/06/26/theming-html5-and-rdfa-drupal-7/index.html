@@ -76,7 +76,7 @@
 <blockquote>Due to the ongoing specification changes for RDFa in HTML5 the doctype and version information may change in a point release, or not, depending. Right now things are working (afaict - I am no RDFa expert).</blockquote></p>
 <p>So I figured I'd give a quick check to see if it is working. I ran an article through Sindice's Inspector and clicked on the graph tab. Everything looked good! This doesn't mean that the markup is valid, but it does mean that all of the data is structured as I want it to be, which is a great first step.</p>
 <p>The graph is pretty complicated for an article with lots of comments, so I figured I'd show an example of what the basic page looks like, instead. You can also <a href="http://inspector.sindice.com/inspect?url=http%3A%2F%2Flin-clark.com%2Frdfa-test-page&content=#GRAPH">test this out in the Inspector</a>.</p>
-<img width="600" src="/sites/default/files/sindice_inspector-rdfa_test.png" />
+<img width="600" src="/images/blog/sindice_inspector-rdfa_test.png" />
 <h2>What this theme does</h2>
 <p>Even though RDFa support is baked into Drupal core, that doesn't mean all themes are RDFa compatible. This theme does a couple of things right that can serve as good pointers for other themes, and raises a couple of issues that we should work on figuring out as a community.</p>
 <h3>The doctype</h3>
@@ -125,7 +125,7 @@ function adaptivetheme_preprocess_html(&$vars) {
 </table>
 <aside class="sidenote"><h4>field.tpl.php</h4><p>Neither Drupal core nor AdaptiveTheme actually use field.tpl.php. Instead they use a theme function. However, both provide field.tpl.php files that show what the theme function is doing and allow for easy override of the field theme function.</p></aside>
 <p>Fortunately, with the new Field API in core, Drupal's template structure matches this E-A-V model very well. There is a surrounding entity template (such as node.tpl.php or user-profile.tpl.php) with field templates nested inside of it. The field template receives the field values from the field formatter and places each value in its own wrapping div.</p>
-<img width=600 src="/sites/default/files/html5rdfa-template-structure.png" />
+<img width=600 src="/images/blog/html5rdfa-template-structure.png" />
 <p>Because of this, you can get the proper markup for Field API fields simply by including a few attributes variables. You only need to include these if you are overriding templates in your theme, they are included by default in core templates.</p>
 <aside class="sidenote"><h4>A note on attribute arrays</h4><p>While <a href="http://drupal.org/node/254940#html-attributes-variable">attribute arrays</a> are used for RDFa in Drupal, they are also used for a number of other things. For example, search uses it to specify the language of the search result. And themes can use them too—AdaptiveTheme uses them to place classes. So even if you don't have RDF enabled, you should include these attributes arrays. Note: these are included in the core templates, so will already be in place if you aren't overriding them.</p></aside>
 <dl>
@@ -166,7 +166,6 @@ The HTML rendered with <code>render($item)</code> above contains the value. This
 </article>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'lin-clark'; // required: replace example with your forum shortname
   var disqus_url = 'http://lin-clark.com' + window.location.pathname;
 
@@ -183,9 +182,6 @@ The HTML rendered with <code>render($item)</code> above contains the value. This
 
       </div>
     </div>
-    <footer>
-
-    </footer>
   </div>
   <!-- JavaScript at the bottom for fast page loading -->
 
