@@ -1,8 +1,4 @@
 <!doctype html>
-<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
-<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
-
 <head>
   <meta charset="utf-8">
 
@@ -10,35 +6,15 @@
   <meta name="description" content="">
   <meta name="author" content="Lin Clark">
 
-  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
-  <!-- For iPhone 4 with high-resolution Retina display: -->
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
-  <!-- For first-generation iPad: -->
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
-  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
-  <!-- For nokia devices: -->
-  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
 
   <link rel="author" href="https://plus.google.com/100047679106364060080" />
 
   <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
   <meta http-equiv="cleartype" content="on">
 
-  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
-
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="/css/styles.css?v=1">
-
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/libs/modernizr-custom.js"></script>
-  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
-  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
 </head>
 
 <body>
@@ -192,14 +168,8 @@ The HTML rendered with <code>render($item)</code> above contains the value. This
   <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.10.2.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via ant build script -->
-  <script src="/js/mylibs/helper.js"></script>
   <script src="/js/script.js"></script>
   <!-- end concatenated and minified scripts-->
-
-  <script>
-    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
-    MBP.scaleFix();
-  </script>
 
   <script>
     var _gaq=[["_setAccount","UA-8334912-1"],["_trackPageview"]];
