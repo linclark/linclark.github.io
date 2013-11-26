@@ -4,18 +4,24 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2013-07-07T00:00:00Z</updated>
+    <updated>2013-11-26T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
     <item>
-      <title>Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</title>
-      <link>http://lin-clark.com/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/</link>
-      <description>&lt;p&gt;You may have seen the announcement last week that Dries &lt;a href="https://drupal.org/node/1784234#comment-7612081"&gt;approved&lt;/a&gt; and &lt;a href="https://drupal.org/commitlog/commit/2/36975492e9222753eba723cd5e07da1de1bb9ab1"&gt;committed&lt;/a&gt; a patch which changes Drupal core's default RDF mappings. When any new Drupal 8 site is installed, the markup will include RDFa that uses terms from the &lt;a href="http://schema.org/"&gt;Schema.org&lt;/a&gt; vocabulary. Of course, as with anything Schema.org, this announcement got some attention.&lt;/p&gt;
-&lt;p&gt;Unfortunately, what's been getting less attention are the multiple other issues that still need to be fixed if we're really going to support RDFa (or microdata, or microformats, for that matter) in Drupal 8 and support it well.&lt;/p&gt;
-</description>
-      <pubDate>Sun, 07 Jul 2013 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/</guid>
+      <title>Video: Quickstart to testing with Behat, Mink, and Selenium</title>
+      <link>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</link>
+      <description>&lt;p&gt;It is easy to test your website's functionality using Behat, a PHP framework for BDD (behavior driven development). This video quickly goes through the configuration of Behat, Mink, and Selenium.&lt;/p&gt;
+&lt;iframe width="420" height="290" src="//www.youtube.com/embed/9cYhnTojaHU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2&gt;Setting up Behat&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href="http://getcomposer.org/doc/00-intro.md"&gt;Composer&lt;/a&gt;
+&lt;/li&gt;
+  &lt;li&gt;Create a &lt;code&gt;composer...&lt;/code&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
   </channel>

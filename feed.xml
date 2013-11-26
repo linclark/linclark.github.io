@@ -4,10 +4,26 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2013-07-07T00:00:00Z</updated>
+    <updated>2013-11-26T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Video: Quickstart to testing with Behat, Mink, and Selenium</title>
+      <link>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</link>
+      <description>&lt;p&gt;It is easy to test your website's functionality using Behat, a PHP framework for BDD (behavior driven development). This video quickly goes through the configuration of Behat, Mink, and Selenium.&lt;/p&gt;
+&lt;iframe width="420" height="290" src="//www.youtube.com/embed/9cYhnTojaHU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2&gt;Setting up Behat&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href="http://getcomposer.org/doc/00-intro.md"&gt;Composer&lt;/a&gt;
+&lt;/li&gt;
+  &lt;li&gt;Create a &lt;code&gt;composer...&lt;/code&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</title>
       <link>http://lin-clark.com/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/</link>
@@ -106,15 +122,6 @@
 </description>
       <pubDate>Wed, 10 Aug 2011 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
-      <title>Writing scripts to clone contrib projects from git.drupal.org</title>
-      <link>http://lin-clark.com/blog/2011/07/22/writing-scripts-clone-contrib-projects-gitdrupalorg/</link>
-      <description>&lt;p&gt;As part of my masters thesis, I&amp;rsquo;m looking into innovation diffusion within Drupal (I think y'all know which one ;).&lt;/p&gt;&lt;p&gt;In order to &amp;lsquo;grep&amp;rsquo; against the codebase, I needed a copy of the most recent versions of ALL of Drupal 7 contrib, which was easy to do back when we used CVS (even a little too easy when you realized that you accidentally started downloading 7,000 projects). However, this is &lt;a href="http://drupal.org/node/1057386"&gt;not so easy with git.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Before starting, I asked in #drupal-contribute whether pulling all of contrib for research purposes would be frowned upon, since it can really soak up a lot of server resources. Folks said it was ok and encouraged me to share whatever script I came up with... so here it is.&lt;/p&gt;
-</description>
-      <pubDate>Fri, 22 Jul 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/07/22/writing-scripts-clone-contrib-projects-gitdrupalorg/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
   </channel>
