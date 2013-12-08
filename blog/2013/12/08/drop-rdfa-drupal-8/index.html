@@ -48,7 +48,7 @@
 
 <p>Drupal 7 core&#8217;s RDFa works in some cases. However, in many cases it outputs unreliable data. I started writing about this fact on my blog in 2011, wrote a thesis about it, and compiled a preliminary list of things we need to fix it in Drupal 8 in a <a href="https://drupal.org/node/1778226">meta issue</a>. My opinion this whole time has been that we either need to fix the module or remove it from core.</p>
 
-<p>Today, I am creating an issue to remove RDF module... but it&#8217;s not just because RDF module isn&#8217;t working like it needs to be. It&#8217;s because I think we have a better option: JSON.</p>
+<p>Today, I created an issue to <a href="https://drupal.org/node/2152459">remove RDF module</a>... but it&#8217;s not just because RDF module isn&#8217;t working like it needs to be. It&#8217;s because I think we have a better option: JSON.</p>
 
 <h2>Why we should ditch RDFa</h2>
 <p>As someone who is very familiar with Drupal 7&#8217;s RDF module, and as the person who rewrote most of it in Drupal 8, I recommend we remove the module. Here&#8217;s why:</p>
@@ -67,7 +67,7 @@
 <p>I&#8217;m also the maintainer of microdata module in Drupal 7. While microdata reduces the complexity of RDFa, it still suffers from some of the same problems. We would still need to involve field formatter developers in order to ensure that attributes are placed properly. It also still requires a separate parser. While microdata parsers are much simpler and easier to debug, it&#8217;s better if you require no special tooling at all.</p>
 
 <h2>Why we should introduce *limited* support for the JSON that Schema.org calls JSON-LD</h2>
-<p>In early summer Google announced that it would read JSON that was directly embedded in web sites, providing an alternate way to add Schema.org data to your page, and it looks like this is catching on. This is a better solution for Drupal because:</p>
+<p>In early summer Google announced that it would read JSON that was directly embedded in web pages, providing an alternate way to add Schema.org data to your page, and it looks like this is catching on. This is a better solution for Drupal because:</p>
 <dl>
   <dt>It would mean we could use the same pipeline for REST&#8217;s serialization and HTML data.</dt>
   <dd>Having a unified approach like this makes it easier to maintain, especially since we have so few people working on these issues.</dd>
