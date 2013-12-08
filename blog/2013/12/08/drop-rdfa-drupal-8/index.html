@@ -85,9 +85,9 @@
 
 <img src="/images/blog/2013/schemaorg-jsonld-validation.png" />
 
-<p>Beyond this pedantic point of note, I think it is important to draw this distinction if just to make clear what we plan to focus on. Like many of the related standards, JSON-LD includes a lot of complexity in order to support extensibility. But as we&#8217;ve seen over the past 4 years, this extensibility is an edge case. The 99% use case for these technologies in Drupal at this point is SEO. And truth be told, what we have in there right now (and what we will have in there in Drupal 8 if we stay on the same path) just isn&#8217;t well suited to satisfying either the primary use case and the edge cases.</p>
+<p>Beyond this pedantic point of note, I think it is important to draw this distinction if just to make clear what we plan to focus on. Like many of the related standards, JSON-LD includes a lot of complexity in order to support extensibility. But as we&#8217;ve seen over the past 4 years, this extensibility is an edge case. The 99% use case for these technologies in Drupal at this point is SEO. And truth be told, what we have in there right now (and what we will have in there in Drupal 8 if we stay on the same path) just isn&#8217;t well suited to satisfying either the primary use case or the edge cases.</p>
 
-<p>So what would this mean for the development of the feature? Unless it is strictly necessary for Schema.org, we wouldn&#8217;t consider it. As I said above, anyone who wants more can easily swap out the core implementation of the Schema.org JSON serialization for a full implementation of JSON-LD.</p>
+<p>So what would this mean for the development of the feature? Unless a feature or fix is strictly necessary for Schema.org, we wouldn&#8217;t consider it. As I said above, anyone who wants more functionality can easily swap out the core implementation of the Schema.org JSON serialization for a full implementation of JSON-LD.</p>
 
 <h2>Making this change now?</h2>
 <p>This is an 11th hour change. However, we aren&#8217;t removing something that&#8217;s working in favor of an unknown. We&#8217;re simply switching from a complex, unfinished solution to a simpler solution. That&#8217;s the kind of change you need to make when a release date is looming and you have unfinished features with limited resources to complete them.</p>
