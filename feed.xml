@@ -4,10 +4,18 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2013-11-26T00:00:00Z</updated>
+    <updated>2013-12-08T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Why Drupal 8 should drop RDFa (and microdata) in favor of JSON</title>
+      <link>http://lin-clark.com/blog/2013/12/08/drop-rdfa-drupal-8/</link>
+      <description>&lt;p&gt;As many in the Drupal community know, I have been heavily involved in the work around RDFa and microdata in Drupal for the past four years. What is generally less well known, though I've discussed it openly, are my thoughts on RDFa in Drupal core.&lt;/p&gt;</description>
+      <pubDate>Sun, 08 Dec 2013 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2013/12/08/drop-rdfa-drupal-8/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Video: Quickstart to testing with Behat, Mink, and Selenium</title>
       <link>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</link>
@@ -112,16 +120,6 @@
 </description>
       <pubDate>Thu, 11 Aug 2011 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
-      <title>Turning the CIA's data into pretty pictures on your site using Views</title>
-      <link>http://lin-clark.com/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/</link>
-      <description>&lt;p&gt;There are a lot of data providers who publish their data openly for reuse. Surprisingly, &lt;a href="http://ckan.net/package/cia-world-factbook"&gt;the CIA is one&lt;/a&gt; of them.&lt;/p&gt;
-&lt;p&gt;Because of this, data geeks can take it and turn it into something that's easy for others to reuse, using open data formats. And because it's available in an open data format, platforms like &lt;a href="http://beta.kasabi.com"&gt;Kasabi&lt;/a&gt; can load it on to their big servers and provide ways for other sites to access and query it, like a SPARQL endpoint. And because it is provided in a SPARQL endpoint, it is easy to reuse it in your Drupal site using Views.&lt;/p&gt;
-</description>
-      <pubDate>Wed, 10 Aug 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/08/10/turning-cias-data-pretty-pictures-your-site-using-views/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
   </channel>
