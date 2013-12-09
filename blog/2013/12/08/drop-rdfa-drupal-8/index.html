@@ -91,6 +91,20 @@
 
 <h2>Making this change now?</h2>
 <p>This is an 11th hour change. However, we aren&#8217;t removing something that&#8217;s working in favor of an unknown. We&#8217;re simply switching from a complex, unfinished solution to a simpler solution. That&#8217;s the kind of change you need to make when a release date is looming and you have unfinished features with limited resources to complete them.</p>
+
+<strong>Update 1:</strong>
+<p>As I expected, the fact that RDFa 1.1 is supported by Google for Rich Snippets has been pointed out. I did not contest that it wasn&#8217;t (because I know that it is, to some degree at least). What I said was that Google doesn&#8217;t explicitly say that they support RDFa in their Schema.org documentation. In fact, they explicitly say that they <strong><em>don&#8217;t</em></strong> support RDFa (see the screenshot on the left).</p>
+
+<figure width="100%">
+  <a href="/images/blog/2013/schema.org FAQ   Webmaster Tools Help.png"><img style="vertical-align:top; width: 32%" src="/images/blog/2013/schema.org FAQ   Webmaster Tools Help.png" /></a>
+  <a href="/images/blog/2013/About Structured Data Markup Helper   Webmaster Tools Help.png"><img style="vertical-align:top; width: 32%" src="/images/blog/2013/About Structured Data Markup Helper   Webmaster Tools Help.png" /></a>
+  <a href="/images/blog/2013/Markup Helper   Article   Webmaster Tools Help.png"><img style="vertical-align:top; width: 32%" src="/images/blog/2013/Markup Helper   Article   Webmaster Tools Help.png" /></a>
+  <figcaption>Screenshots (taken on Dec 9, 2013) of Google documentation: 1) <a href="https://support.google.com/webmasters/answer/1211158">schema.org FAQ</a>, 2) <a href="https://support.google.com/webmasters/answer/3069489?hl=en&ref_topic=3068649">About Structured Data Markup Helper</a>, and 3) <a href="https://support.google.com/webmasters/answer/3222269">Article Markup Helper</a></figcaption>
+</figure>
+
+<p>Other people have asked whether Google supports JSON-LD for Rich Snippets. That&#8217;s hard to say. Based on the documentation of the Structured Data Markup Helper (screenshot center) I would say yes, because it prominently features a Rich Snippet and then says that microdata and JSON-LD are two ways of marking up your data on pages or in emails.</p>
+<p>It does say microdata is preferred for pages, but it does not say that JSON-LD should not be used for marking up pages. They even include the factoid about JSON-LD on pages about marking up articles and books (screenshot right). However, based on a <a href="https://twitter.com/danbri/status/410074522293784576">tweet</a> from Dan Brickley, it is possible that Google only uses JSON-LD on pages for some specific search applications. I would find this an odd distinction for them to make, since it&#8217;s clear that they have in place the tools and process for extracting JSON-LD.</p>
+
 </article>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
