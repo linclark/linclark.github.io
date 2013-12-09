@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xml:base="http://lin-clark.com" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Lin Clark</title>
+    <link href="http://lin-clark.com"/>
+    <language>en</language>
+    <updated>2013-12-08T00:00:00Z</updated>
+    <author>
+      <name>Lin Clark</name>
+    </author>
+    <item>
+      <title>Why Drupal 8 should drop RDFa (and microdata) in favor of JSON</title>
+      <link>http://lin-clark.com/blog/2013/12/08/drop-rdfa-drupal-8/</link>
+      <description>&lt;p&gt;As many in the Drupal community know, I have been heavily involved in the work around RDFa and microdata in Drupal for the past four years. What is generally less well known, though I've discussed it openly, are my thoughts on RDFa in Drupal core.&lt;/p&gt;</description>
+      <pubDate>Sun, 08 Dec 2013 22:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2013/12/08/drop-rdfa-drupal-8/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Video: Quickstart to testing with Behat, Mink, and Selenium</title>
+      <link>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</link>
+      <description>&lt;p&gt;It is easy to test your website's functionality using Behat, a PHP framework for BDD (behavior driven development). This video quickly goes through the configuration of Behat, Mink, and Selenium.&lt;/p&gt;
+&lt;iframe width="420" height="290" src="//www.youtube.com/embed/9cYhnTojaHU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2&gt;Setting up Behat&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href="http://getcomposer.org/doc/00-intro.md"&gt;Composer&lt;/a&gt;
+&lt;/li&gt;
+  &lt;li&gt;Create a &lt;code&gt;composer...&lt;/code&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+      <pubDate>Tue, 26 Nov 2013 22:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+  </channel>
+</rss>
