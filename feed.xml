@@ -4,10 +4,18 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2013-12-08T00:00:00Z</updated>
+    <updated>2014-01-22T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Video: Setting up REST Services in Drupal 8</title>
+      <link>http://lin-clark.com/blog/2014/01/22/setting-up-rest-drupal-8/</link>
+      <description>&lt;p&gt;With Drupal 8, you can provide REST services to interact with your site’s data, and you don’t have to rely on contrib modules to do it. This screencast is the first in a series demonstrating how to configure such services. In this one, I will show...&lt;/p&gt;</description>
+      <pubDate>Wed, 22 Jan 2014 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2014/01/22/setting-up-rest-drupal-8/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Why Drupal 8 should drop RDFa (and microdata) in favor of JSON</title>
       <link>http://lin-clark.com/blog/2013/12/08/drop-rdfa-drupal-8/</link>
@@ -110,16 +118,6 @@
 </description>
       <pubDate>Tue, 16 Aug 2011 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2011/08/16/microdata-drupal-challenges-field-formatters/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
-      <title>More fun with CIA data: SPARQL Views with relationships and contextual filters</title>
-      <link>http://lin-clark.com/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/</link>
-      <description>&lt;p&gt;Yesterday, I posted about &lt;a href="http://lin-clark.com/blog/turning-cias-data-pretty-pictures-your-site-using-views"&gt;reusing the CIA's data&lt;/a&gt; on your site. I demonstrated how you can use Views to access the CIA World Factbook data and turn it into charts.&lt;/p&gt;
-&lt;p&gt;You can enhance these views further by using relationships to get information about related things, such as bordering countries, and you can use contextual filters to tailor the SPARQL results to your node content.&lt;/p&gt;
-</description>
-      <pubDate>Thu, 11 Aug 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/08/11/more-fun-cia-data-sparql-views-relationships-and-contextual-filters/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
   </channel>
