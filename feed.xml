@@ -4,10 +4,18 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2014-01-22T00:00:00Z</updated>
+    <updated>2014-01-24T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Video: DELETE requests and Cookie Authentication in Drupal 8's REST</title>
+      <link>http://lin-clark.com/blog/2014/01/24/delete-requests-cookie-authentication-drupal-8-rest/</link>
+      <description>&lt;p&gt;You can remove content from your site using the HTTP method DELETE. Since you don't want just anyone deleting content from your site, you'll want to keep permission limited to trusted users. In this video, I'll show you how to run DELETE requests and...&lt;/p&gt;</description>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2014/01/24/delete-requests-cookie-authentication-drupal-8-rest/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Video: Setting up REST Services in Drupal 8</title>
       <link>http://lin-clark.com/blog/2014/01/22/setting-up-rest-drupal-8/</link>
@@ -79,16 +87,6 @@
       <dc:creator>Lin</dc:creator>
     </item>
     <item>
-      <title>Microdata in Drupal early preview</title>
-      <link>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</link>
-      <description>&lt;p&gt;On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The &lt;a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html"&gt;announcement&lt;/a&gt; has gotten people really interested in inline structured data such as microdata and RDFa.&lt;/p&gt;
-&lt;p&gt;This screencast shows how you can use the microdata module to place Schema.org terms. This is an early preview—very few field formatters have microdata support at this time and the module is still changing quite a bit—but I thought people might be interested in the direction the module is heading.&lt;/p&gt;
-</description>
-      <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
       <title>Building modules on top of SPARQL Views</title>
       <link>http://lin-clark.com/blog/2011/09/14/building-modules-top-sparql-views/</link>
       <description>&lt;p&gt;I posted this video a couple of weeks ago but didn't get a chance to write it up. It demonstrates building a module that creates a view using SPARQL on whatever site it is installed on.&lt;/p&gt;
@@ -96,6 +94,16 @@
 </description>
       <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2011/09/14/building-modules-top-sparql-views/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
+    <item>
+      <title>Microdata in Drupal early preview</title>
+      <link>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</link>
+      <description>&lt;p&gt;On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The &lt;a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html"&gt;announcement&lt;/a&gt; has gotten people really interested in inline structured data such as microdata and RDFa.&lt;/p&gt;
+&lt;p&gt;This screencast shows how you can use the microdata module to place Schema.org terms. This is an early preview—very few field formatters have microdata support at this time and the module is still changing quite a bit—but I thought people might be interested in the direction the module is heading.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
     <item>
@@ -107,17 +115,6 @@
 </description>
       <pubDate>Thu, 18 Aug 2011 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2011/08/18/being-woman-tech-some-my-experiences/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
-      <title>Microdata in Drupal: challenges for field formatters</title>
-      <link>http://lin-clark.com/blog/2011/08/16/microdata-drupal-challenges-field-formatters/</link>
-      <description>&lt;p&gt;Interest in microdata has been on the rise since the &lt;a href="http://googlewebmastercentral.blogspot.com/2011/06/introducing-schemaorg-search-engines.html"&gt;schema.org announcement&lt;/a&gt; in June.&lt;/p&gt;&lt;p&gt;I had fortunately already been looking at the &lt;a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html"&gt;microdata spec&lt;/a&gt; and thinking about how the work to get RDFa output in core could be repurposed for microdata, so I &lt;a href="http://drupal.org/project/microdata"&gt;started a project&lt;/a&gt; that day.&lt;/p&gt;
-&lt;p&gt;Since microdata is based on RDFa, there is a lot that can be repurposed. But as I noted in &lt;a href="http://lin-clark.com/blog/two-meanings-semantics-html5"&gt;my last post on the subject&lt;/a&gt;, there are also small differences between the specs... and in some cases, these small differences have a big impact.&lt;/p&gt;
-&lt;p&gt;We need to start thinking about those impacts.&lt;/p&gt;
-</description>
-      <pubDate>Tue, 16 Aug 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/08/16/microdata-drupal-challenges-field-formatters/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
   </channel>
