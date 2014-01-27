@@ -4,10 +4,18 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2014-01-24T00:00:00Z</updated>
+    <updated>2014-01-27T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Video: Using Basic Authentication in Drupal 8's REST Services</title>
+      <link>http://lin-clark.com/blog/2014/01/27/basic-authentication-drupal-8-rest/</link>
+      <description>&lt;p&gt;Drupal 8 core offers an alternative to cookie based authentication, which is HTTP Basic Auth. In this video, I show you how to use Basic Auth, touch on the security concern of using Basic Auth over plain HTTP, and talk a little bit about other authentication...&lt;/p&gt;</description>
+      <pubDate>Mon, 27 Jan 2014 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2014/01/27/basic-authentication-drupal-8-rest/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Video: DELETE requests and Cookie Authentication in Drupal 8's REST</title>
       <link>http://lin-clark.com/blog/2014/01/24/delete-requests-cookie-authentication-drupal-8-rest/</link>
@@ -104,17 +112,6 @@
 </description>
       <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2011/09/14/microdata-drupal-early-preview/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
-      <title>On being a woman in tech: some of my experiences</title>
-      <link>http://lin-clark.com/blog/2011/08/18/being-woman-tech-some-my-experiences/</link>
-      <description>&lt;p&gt;Recently, there has been quite a row about a tweet sent out by the DrupalCon Twitter account. The tweet suggested that people look at the attendees page to reconnect with the attractive developer/designer they met at last year's DrupalCon. A number of people pointed out that this subtly (though inadvertently) promotes a sexually charged environment at the conference.&lt;/p&gt;&lt;p&gt;For the most part I have stayed out of the discussion, but in catching up on some blog posts last night I saw some troubling reactions, with people being quite callous to the experiences of those who found the tweet off-putting.&lt;/p&gt;
-&lt;p&gt;I don't usually blog about these kinds of issues, but I wanted to share some of my experiences that I think can help inform the discussion and help people understand some of the sensitivities.&lt;/p&gt;
-&lt;p&gt;Not all of these experiences are directly related to the tweet at hand, but I do believe the "Drupal isn't immune" section does directly relate and is a very concrete example of how women can sometimes be treated at these events.&lt;/p&gt;
-</description>
-      <pubDate>Thu, 18 Aug 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/08/18/being-woman-tech-some-my-experiences/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
   </channel>

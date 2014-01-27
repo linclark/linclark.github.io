@@ -4,10 +4,18 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2014-01-24T00:00:00Z</updated>
+    <updated>2014-01-27T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Video: Using Basic Authentication in Drupal 8's REST Services</title>
+      <link>http://lin-clark.com/blog/2014/01/27/basic-authentication-drupal-8-rest/</link>
+      <description>&lt;p&gt;Drupal 8 core offers an alternative to cookie based authentication, which is HTTP Basic Auth. In this video, I show you how to use Basic Auth, touch on the security concern of using Basic Auth over plain HTTP, and talk a little bit about other authentication...&lt;/p&gt;</description>
+      <pubDate>Mon, 27 Jan 2014 22:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2014/01/27/basic-authentication-drupal-8-rest/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Video: DELETE requests and Cookie Authentication in Drupal 8's REST</title>
       <link>http://lin-clark.com/blog/2014/01/24/delete-requests-cookie-authentication-drupal-8-rest/</link>
