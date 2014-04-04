@@ -42,12 +42,11 @@
 
     <div id="main" class="clear">
       <div id="main-content" role="main">
-        <h2><a href="/blog/2013/12/08/drop-rdfa-drupal-8/">Why Drupal 8 should drop RDFa (and microdata) in favor of JSON</a> </h2><span>Dec  8</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
+        <h2><a href="/blog/2014/01/27/basic-authentication-drupal-8-rest/">Video: Using Basic Authentication in Drupal 8's REST Services</a> </h2><span>Jan 27</span>
+<p>Drupal 8 core offers an alternative to cookie based authentication, which is HTTP Basic Auth. In this video, I show you how to use Basic Auth, touch on the security concern of using Basic Auth over plain HTTP, and talk a little bit about other authentication...</p><a href="/blog/2014/01/27/basic-authentication-drupal-8-rest/">more &raquo;</a><h2><a href="/blog/2014/01/24/delete-requests-cookie-authentication-drupal-8-rest/">Video: DELETE requests and Cookie Authentication in Drupal 8's REST</a> </h2><span>Jan 24</span>
+<p>You can remove content from your site using the HTTP method DELETE. Since you don't want just anyone deleting content from your site, you'll want to keep permission limited to trusted users. In this video, I'll show you how to run DELETE requests and...</p><a href="/blog/2014/01/24/delete-requests-cookie-authentication-drupal-8-rest/">more &raquo;</a><h2><a href="/blog/2014/01/22/setting-up-rest-drupal-8/">Video: Setting up REST Services in Drupal 8</a> </h2><span>Jan 22</span>
+<p>With Drupal 8, you can provide REST services to interact with your site’s data, and you don’t have to rely on contrib modules to do it. This screencast is the first in a series demonstrating how to configure such services. In this one, I will show...</p><a href="/blog/2014/01/22/setting-up-rest-drupal-8/">more &raquo;</a><h2><a href="/blog/2013/12/08/drop-rdfa-drupal-8/">Why Drupal 8 should drop RDFa (and microdata) in favor of JSON</a> </h2><span>Dec  8</span>
 <p>As many in the Drupal community know, I have been heavily involved in the work around RDFa and microdata in Drupal for the past four years. What is generally less well known, though I've discussed it openly, are my thoughts on RDFa in Drupal core.</p><a href="/blog/2013/12/08/drop-rdfa-drupal-8/">more &raquo;</a><h2><a href="/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/">Video: Quickstart to testing with Behat, Mink, and Selenium</a> </h2><span>Nov 26</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
 <p>It is easy to test your website's functionality using Behat, a PHP framework for BDD (behavior driven development). This video quickly goes through the configuration of Behat, Mink, and Selenium.</p>
 <iframe width="420" height="290" src="//www.youtube.com/embed/9cYhnTojaHU" frameborder="0" allowfullscreen></iframe>
 <h2>Setting up Behat</h2>
@@ -57,46 +56,19 @@
   <li>Create a <code>composer...</code>
 </li>
 </ol><a href="/blog/2013/11/26/quickstart-testing-with-behat-mink-selenium/">more &raquo;</a><h2><a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">Drupal 8 now has Schema.org RDF mappings (but don't pop the champagne yet)</a> </h2><span>Jul  7</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
 <p>You may have seen the announcement last week that Dries <a href="https://drupal.org/node/1784234#comment-7612081">approved</a> and <a href="https://drupal.org/commitlog/commit/2/36975492e9222753eba723cd5e07da1de1bb9ab1">committed</a> a patch which changes Drupal core's default RDF mappings. When any new Drupal 8 site is installed, the markup will include RDFa that uses terms from the <a href="http://schema.org/">Schema.org</a> vocabulary. Of course, as with anything Schema.org, this announcement got some attention.</p>
 <p>Unfortunately, what's been getting less attention are the multiple other issues that still need to be fixed if we're really going to support RDFa (or microdata, or microformats, for that matter) in Drupal 8 and support it well.</p>
 <a href="/blog/2013/07/07/drupal-8-now-has-schemaorg-rdf-mappings-dont-pop-champagne-yet/">more &raquo;</a><h2><a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">Microdata updates: Preliminary Views/Panels support and Google Summer of Code</a> </h2><span>May 24</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
 Recent developments in microdata publishing support in Views/Panels and Google Summer of Code's support for microdata publishing in contrib field formatters are helping push the Microdata module closer to release.
 <a href="/blog/2012/05/24/microdata-updates-preliminary-viewspanels-support-and-google-summer-code/">more &raquo;</a><h2><a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">Drupal 7 field modules by popularity</a> </h2><span>Apr  3</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
 <p>By my rough count, there are 150 contrib projects for Drupal 7 that declare new field types as part of their central module. I've listed the projects here by their usage statistics.</p>
 <p>Please let me know if I missed your field module!</p>
 <a href="/blog/2012/04/03/drupal-7-field-modules-popularity/">more &raquo;</a><h2><a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">Exploring Drupal module interactions with pidgin UML</a> </h2><span>Mar 15</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
 <p>The essence of Drupal is complex interactions between modules. These interactions currently take the form of hooks. The most difficult (and most useful) thing for a Drupal developer to understand is how different sets of modules interact using these hooks and in which order.</p><p>Even though they are the heart of our system, we don&#39;t have a good way of documenting these interactions. While the API docs do contain this information for some hooks (eg, <a href="http://api.drupal.org/api/drupal/modules%21node%21node.api.php/function/hook_node_load/7">hook_node_load</a>), it&#39;s hard to grasp the overall picture from reading docblocks.</p><p>This causes a bigger problem than just the learning curve. It also makes it harder for us to discuss changes in APIs and architecture. We have been seeing this in the Drupal 8 development cycle&mdash;we are considering major overhauls of systems, and it&#39;s unclear to many what the impacts of these decisions are. The only people who can intelligently participate are those who are intensely involved in the architecting process or those who take a considerable amount of time to step through the code. As sun points out in <a href="http://www.unleashedmind.com/en/blog/sun/drupal-8-the-path-forward">Drupal 8: The Path Forward</a>, this communication challenge remains unresolved.</p><p>We need to find a way to communicate about these interactions which are so central to what we do.&nbsp;I have recently starting working with a visualization technique that helps me understand these interactions better, and I would be interested to hear whether others find it helpful as well.</p>
-<a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">more &raquo;</a><h2><a href="/blog/2011/09/14/microdata-drupal-early-preview/">Microdata in Drupal early preview</a> </h2><span>Sep 14</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>On June 2, the big three search engines (Google, Yahoo, and Bing) announced Schema.org, which helps them show search results in a more useful way. The <a href="http://blog.schema.org/2011/07/on-june-2-nd-we-announced-collaboration.html">announcement</a> has gotten people really interested in inline structured data such as microdata and RDFa.</p>
-<p>This screencast shows how you can use the microdata module to place Schema.org terms. This is an early preview—very few field formatters have microdata support at this time and the module is still changing quite a bit—but I thought people might be interested in the direction the module is heading.</p>
-<a href="/blog/2011/09/14/microdata-drupal-early-preview/">more &raquo;</a><h2><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> </h2><span>Sep 14</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
+<a href="/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/">more &raquo;</a><h2><a href="/blog/2011/09/14/building-modules-top-sparql-views/">Building modules on top of SPARQL Views</a> </h2><span>Sep 14</span>
 <p>I posted this video a couple of weeks ago but didn't get a chance to write it up. It demonstrates building a module that creates a view using SPARQL on whatever site it is installed on.</p>
 <p>If you provide a dataset and it is available with SPARQL, this can be a really great way to help people understand how to use your data. Because users who install the module can use the Views user interface to alter the view that is created, it can be a great starting point for experimentation by users who don't know so much about your data or building views.</p>
-<a href="/blog/2011/09/14/building-modules-top-sparql-views/">more &raquo;</a><h2><a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">On being a woman in tech: some of my experiences</a> </h2><span>Aug 18</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Recently, there has been quite a row about a tweet sent out by the DrupalCon Twitter account. The tweet suggested that people look at the attendees page to reconnect with the attractive developer/designer they met at last year's DrupalCon. A number of people pointed out that this subtly (though inadvertently) promotes a sexually charged environment at the conference.</p><p>For the most part I have stayed out of the discussion, but in catching up on some blog posts last night I saw some troubling reactions, with people being quite callous to the experiences of those who found the tweet off-putting.</p>
-<p>I don't usually blog about these kinds of issues, but I wanted to share some of my experiences that I think can help inform the discussion and help people understand some of the sensitivities.</p>
-<p>Not all of these experiences are directly related to the tweet at hand, but I do believe the "Drupal isn't immune" section does directly relate and is a very concrete example of how women can sometimes be treated at these events.</p>
-<a href="/blog/2011/08/18/being-woman-tech-some-my-experiences/">more &raquo;</a><h2><a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">Microdata in Drupal: challenges for field formatters</a> </h2><span>Aug 16</span>
-<!-- use article.summary(250) if you have Nokogiri available to show just
-     the first 250 characters -->
-<p>Interest in microdata has been on the rise since the <a href="http://googlewebmastercentral.blogspot.com/2011/06/introducing-schemaorg-search-engines.html">schema.org announcement</a> in June.</p><p>I had fortunately already been looking at the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/microdata.html">microdata spec</a> and thinking about how the work to get RDFa output in core could be repurposed for microdata, so I <a href="http://drupal.org/project/microdata">started a project</a> that day.</p>
-<p>Since microdata is based on RDFa, there is a lot that can be repurposed. But as I noted in <a href="http://lin-clark.com/blog/two-meanings-semantics-html5">my last post on the subject</a>, there are also small differences between the specs... and in some cases, these small differences have a big impact.</p>
-<p>We need to start thinking about those impacts.</p>
-<a href="/blog/2011/08/16/microdata-drupal-challenges-field-formatters/">more &raquo;</a>
+<a href="/blog/2011/09/14/building-modules-top-sparql-views/">more &raquo;</a>
       </div>
     </div>
   </div>
