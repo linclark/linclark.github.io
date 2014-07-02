@@ -4,10 +4,20 @@
     <title>Lin Clark</title>
     <link href="http://lin-clark.com"/>
     <language>en</language>
-    <updated>2014-01-27T00:00:00Z</updated>
+    <updated>2014-07-01T00:00:00Z</updated>
     <author>
       <name>Lin Clark</name>
     </author>
+    <item>
+      <title>Authoring Node.js workshopper lessons</title>
+      <link>http://lin-clark.com/blog/2014/07/01/authoring-nodejs-workshopper-lessons/</link>
+      <description>&lt;p&gt;The best time to write docs for newbies is when you've just figured something out yourself. It gives you a unique vantage point on where things are confusing.&lt;/p&gt;
+
+&lt;p&gt;Node.js has a great tool for creating interactive tutorials for newbies called workshopper...&lt;/p&gt;</description>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 -0000</pubDate>
+      <guid>http://lin-clark.com/blog/2014/07/01/authoring-nodejs-workshopper-lessons/</guid>
+      <dc:creator>Lin</dc:creator>
+    </item>
     <item>
       <title>Video: Using Basic Authentication in Drupal 8's REST Services</title>
       <link>http://lin-clark.com/blog/2014/01/27/basic-authentication-drupal-8-rest/</link>
@@ -92,16 +102,6 @@
 </description>
       <pubDate>Thu, 15 Mar 2012 00:00:00 -0000</pubDate>
       <guid>http://lin-clark.com/blog/2012/03/15/exploring-drupal-module-interactions-pidgin-uml/</guid>
-      <dc:creator>Lin</dc:creator>
-    </item>
-    <item>
-      <title>Building modules on top of SPARQL Views</title>
-      <link>http://lin-clark.com/blog/2011/09/14/building-modules-top-sparql-views/</link>
-      <description>&lt;p&gt;I posted this video a couple of weeks ago but didn't get a chance to write it up. It demonstrates building a module that creates a view using SPARQL on whatever site it is installed on.&lt;/p&gt;
-&lt;p&gt;If you provide a dataset and it is available with SPARQL, this can be a really great way to help people understand how to use your data. Because users who install the module can use the Views user interface to alter the view that is created, it can be a great starting point for experimentation by users who don't know so much about your data or building views.&lt;/p&gt;
-</description>
-      <pubDate>Wed, 14 Sep 2011 00:00:00 -0000</pubDate>
-      <guid>http://lin-clark.com/blog/2011/09/14/building-modules-top-sparql-views/</guid>
       <dc:creator>Lin</dc:creator>
     </item>
     <item>
