@@ -1,0 +1,25 @@
+{
+  "name": "@linclark/linclark.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linclark/linclark.github.io.git"
+  },
+  "scripts": {
+    "deploy": "github-pages-deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linclark/linclark.github.io/issues"
+  },
+  "homepage": "https://github.com/linclark/linclark.github.io#readme"
+}
