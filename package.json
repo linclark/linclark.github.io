@@ -16,7 +16,7 @@
   "scripts": {
     "deploy": "github-pages-deploy"
   },
-  "author": "",
+  "author": "Lin Clark",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/linclark/linclark.github.io/issues"
