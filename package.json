@@ -1,7 +1,7 @@
 {
   "name": "@linclark/linclark.github.io",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lin Clark's personal site",
   "main": "index.js",
   "directories": {
     "test": "test"
